@@ -26,37 +26,37 @@ const Homepage = () => {
           </div>
 
           <div className="flex flex-col items-center bg-gray-100 p-4 rounded-lg shadow-md">
-  <Image
-    src="https://res.cloudinary.com/dj59omo7m/image/upload/v1739875324/meet-best-interior-designers-near-me-340x340_frcjli.jpg"
-    alt="Meet our designers"
-    width={200}
-    height={150}
-    className="rounded-lg"
-  />
-  <p className="text-lg font-semibold mt-2">02 Meet our designers</p>
-</div>
+            <Image
+              src="https://res.cloudinary.com/dj59omo7m/image/upload/v1739875324/meet-best-interior-designers-near-me-340x340_frcjli.jpg"
+              alt="Meet our designers"
+              width={200}
+              height={150}
+              className="rounded-lg"
+            />
+            <p className="text-lg font-semibold mt-2">02 Meet our designers</p>
+          </div>
 
-<div className="flex flex-col items-center bg-gray-100 p-4 rounded-lg shadow-md">
-  <Image
-    src="https://res.cloudinary.com/dj59omo7m/image/upload/v1739875325/personalised-interior-designs-by-top-interior-designers-340x340_dkkbm5.jpg"
-    alt="Personalize your designs"
-    width={200}
-    height={150}
-    className="rounded-lg"
-  />
-  <p className="text-lg font-semibold mt-2">03 Personalize your designs</p>
-</div>
+          <div className="flex flex-col items-center bg-gray-100 p-4 rounded-lg shadow-md">
+            <Image
+              src="https://res.cloudinary.com/dj59omo7m/image/upload/v1739875325/personalised-interior-designs-by-top-interior-designers-340x340_dkkbm5.jpg"
+              alt="Personalize your designs"
+              width={200}
+              height={150}
+              className="rounded-lg"
+            />
+            <p className="text-lg font-semibold mt-2">03 Personalize your designs</p>
+          </div>
 
-<div className="flex flex-col items-center bg-gray-100 p-4 rounded-lg shadow-md">
-  <Image
-    src="https://res.cloudinary.com/dj59omo7m/image/upload/v1739875324/best-interiors-delivered-mumbai-bangalore-hyderabad-340x340-1_aqisxt.webp"
-    alt="Move in"
-    width={200}
-    height={150}
-    className="rounded-lg"
-  />
-  <p className="text-lg font-semibold mt-2">04 Move in</p>
-</div>
+          <div className="flex flex-col items-center bg-gray-100 p-4 rounded-lg shadow-md">
+            <Image
+              src="https://res.cloudinary.com/dj59omo7m/image/upload/v1739875324/best-interiors-delivered-mumbai-bangalore-hyderabad-340x340-1_aqisxt.webp"
+              alt="Move in"
+              width={200}
+              height={150}
+              className="rounded-lg"
+            />
+            <p className="text-lg font-semibold mt-2">04 Move in</p>
+          </div>
 
         </div>
 
@@ -71,23 +71,17 @@ const Homepage = () => {
       <section className="mt-16">
         <h2 className="text-3xl font-semibold text-center text-gray-900">Home Interior Designs</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-6">
-  <div className="relative">
-    <Image
-      src="https://res.cloudinary.com/dj59omo7m/image/upload/v1739876741/home-show_tmuu8b.jpg"
-      alt="A Modern 3BHK Flat"
-      className="rounded-lg shadow-lg w-full h-64 object-cover"
-    />
-    
-  </div>
-  <div className="relative">
-    <Image
-      src="https://res.cloudinary.com/dj59omo7m/image/upload/v1739877692/3bhk_ubjybe.jpg"
-      alt="Ritesh Tiwari’s 3BHK Home"
-      className="rounded-lg shadow-lg w-full h-64 object-cover"
-    />
-    
-  </div>
-</div>
+          <div className="relative">
+
+            <img src="https://res.cloudinary.com/dj59omo7m/image/upload/v1739876741/home-show_tmuu8b.jpg" alt="A Modern 3BHK Flat" className="rounded-lg shadow-lg w-full h-64 object-cover" />
+
+          </div>
+          <div className="relative">
+
+            <img src="https://res.cloudinary.com/dj59omo7m/image/upload/v1739877692/3bhk_ubjybe.jpg" alt="A Modern 3BHK Flat" className="rounded-lg shadow-lg w-full h-64 object-cover" />
+
+          </div>
+        </div>
 
       </section>
 
@@ -99,32 +93,55 @@ const Homepage = () => {
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mt-6">
-  {[
-    { id: 1, title: "Modern 3BHK Flat", image: "https://res.cloudinary.com/dj59omo7m/image/upload/v1739865350/dining-room-interior-design-for-modern-3-bhk-flat-bangalore_xu6rrg.jpg", description: "Sleek and stylish interiors with contemporary elements." },
-    { id: 2, title: "Luxury Living Room", image: "https://res.cloudinary.com/dj59omo7m/image/upload/v1739873015/industrial-style-living-room-interior-with-furniture-sofa_uxllhr.jpg", description: "A spacious living area with elegant décor." },
-    { id: 3, title: "Minimalist Bedroom", image: "https://res.cloudinary.com/dj59omo7m/image/upload/v1739867555/compact-bedroom-design-comes-with-queen-size_qkvgfw.jpg", description: "A cozy yet modern bedroom with minimal design." },
-    { id: 4, title: "Classic Wooden Kitchen", image: "https://res.cloudinary.com/dj59omo7m/image/upload/v1739872510/l-shaped-modualr-kitchen-with-marble-and-wood-makes-modern-kitchen-design_ane2oz.jpg", description: "A warm and inviting kitchen with wooden finishes." }
-  ].map((design) => (
-    <div key={design.id} className="bg-gray-100 p-4 rounded-lg shadow-md flex flex-col items-center">
-      <Image src={design.image} alt={design.title} width={300} height={200} className="rounded-lg object-cover" />
-      <h3 className="text-lg font-semibold mt-2 text-center">{design.title}</h3>
-      <p className="text-gray-600 text-sm mt-1 text-center">{design.description}</p>
-    </div>
-  ))}
-</div>
+          {[
+            { id: 1, title: "Modern 3BHK Flat", image: "https://res.cloudinary.com/dj59omo7m/image/upload/v1739865350/dining-room-interior-design-for-modern-3-bhk-flat-bangalore_xu6rrg.jpg", description: "Sleek and stylish interiors with contemporary elements." },
+            { id: 2, title: "Luxury Living Room", image: "https://res.cloudinary.com/dj59omo7m/image/upload/v1739873015/industrial-style-living-room-interior-with-furniture-sofa_uxllhr.jpg", description: "A spacious living area with elegant décor." },
+            { id: 3, title: "Minimalist Bedroom", image: "https://res.cloudinary.com/dj59omo7m/image/upload/v1739867555/compact-bedroom-design-comes-with-queen-size_qkvgfw.jpg", description: "A cozy yet modern bedroom with minimal design." },
+            { id: 4, title: "Classic Wooden Kitchen", image: "https://res.cloudinary.com/dj59omo7m/image/upload/v1739872510/l-shaped-modualr-kitchen-with-marble-and-wood-makes-modern-kitchen-design_ane2oz.jpg", description: "A warm and inviting kitchen with wooden finishes." }
+          ].map((design) => (
+            <div key={design.id} className="bg-gray-100 p-4 rounded-lg shadow-md flex flex-col items-center">
+              <Image src={design.image} alt={design.title} width={300} height={200} className="rounded-lg object-cover" />
+              <h3 className="text-lg font-semibold mt-2 text-center">{design.title}</h3>
+              <p className="text-gray-600 text-sm mt-1 text-center">{design.description}</p>
+            </div>
+          ))}
+        </div>
 
 
       </section>
 
       {/* Portfolio Section */}
       <section className="portfolio mt-16">
-        <h2 className="text-3xl font-semibold text-center text-gray-900">Our Projects</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
-          <Image src="/project1.jpg" alt="Project 1" width={400} height={300} className="rounded-lg shadow-lg" />
-          <Image src="/project2.jpg" alt="Project 2" width={400} height={300} className="rounded-lg shadow-lg" />
-          <Image src="/project3.jpg" alt="Project 3" width={400} height={300} className="rounded-lg shadow-lg" />
+  <h2 className="text-3xl font-semibold text-center text-gray-900">Our Projects</h2>
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
+    {[
+      { src: "https://res.cloudinary.com/dj59omo7m/image/upload/v1740201312/WhatsApp_Image_2025-02-19_at_2.12.46_AM_rckf40.jpg", title: "Project for Kanchan Paul", description: "A stunning transformation with elegant decor and cozy ambiance." },
+      { src: "https://res.cloudinary.com/dj59omo7m/image/upload/v1740201414/WhatsApp_Image_2025-02-19_at_2.13.58_AM_scdher.jpg", title: "Project for Niraj Mishra", description: "A serene and stylish bedroom with premium furnishing and lighting." },
+      { src: "https://res.cloudinary.com/dj59omo7m/image/upload/v1740201557/WhatsApp_Image_2025-02-19_at_2.10.50_AM_ad9osi.jpg", title: "Project for Dr. Ashwariya Choudhry", description: "A sleek and functional kitchen space designed for modern homes." }
+    ].map((project, index) => (
+      <div key={index} className="flex flex-col items-center bg-gray-100 p-4 rounded-lg shadow-lg">
+        <div className="w-[400px] h-[250px] overflow-hidden rounded-lg">
+          <Image
+            src={project.src}
+            alt={project.title}
+            width={400}
+            height={250}
+            className="w-full h-full object-cover rounded-lg shadow-md"
+          />
         </div>
-      </section>
+        <h3 className="text-xl font-semibold mt-4 text-gray-800">{project.title}</h3>
+        <p className="text-gray-600 text-center mt-2">{project.description}</p>
+      </div>
+    ))}
+  </div>
+  <div className="text-center mt-6 mb-4">
+    <a href="/recent-projects" className="text-green-600 font-semibold hover:underline" target="_blank">
+      View all recent projects
+    </a>
+  </div>
+</section>
+
+
 
       {/* Testimonials Section */}
       <section className="testimonials mt-16">
@@ -145,7 +162,7 @@ const Homepage = () => {
         </div>
 
         <div className="text-center mt-6 mb-4">
-          <a href="#" className="text-green-600 font-semibold hover:underline">View all reviews</a>
+          <a href="/customer-reviews" className="text-green-600 font-semibold hover:underline">View all reviews</a>
         </div>
       </section>
       <section className="blogs mt-16">
@@ -182,11 +199,7 @@ const Homepage = () => {
           </div>
         </div>
       </section>
-
     </div>
-
-
-
   );
 };
 
