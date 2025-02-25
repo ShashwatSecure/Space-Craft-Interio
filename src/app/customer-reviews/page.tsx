@@ -1,6 +1,7 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { reviewData } from "@/reviewData";
+import { FaStar } from "react-icons/fa";
 
 const ReviewsPage = () => {
     const [currentPage, setCurrentPage] = useState(1);
@@ -9,6 +10,10 @@ const ReviewsPage = () => {
     const totalPages = Math.ceil(reviewData.length / reviewsPerPage);
     const startIndex = (currentPage - 1) * reviewsPerPage;
     const selectedReviews = reviewData.slice(startIndex, startIndex + reviewsPerPage);
+
+    useEffect(() => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    }, [currentPage]);
 
     return (
         <div className="max-w-4xl mx-auto p-6 mt-12 md:mt-16">
@@ -19,13 +24,19 @@ const ReviewsPage = () => {
                 See what our happy customers have to say about our services!
             </p>
 
-            <div className="space-y-6 mt-6 ">
+            <div className="space-y-6 mt-6">
                 {selectedReviews.map((review, index) => (
-                    <div key={index} className="bg-gray-100 p-6 rounded-lg shadow-md">
+                    <div key={index} className="bg-gray-100 p-6 rounded-lg shadow-md relative">
                         <p className="text-gray-700 italic">"{review.review}"</p>
                         <div className="mt-4">
                             <h3 className="text-lg font-semibold">{review.name}</h3>
                             <p className="text-sm text-gray-500">{review.address}</p>
+                        </div>
+                        {/* Star Rating */}
+                        <div className="mt-4 flex space-x-1 text-yellow-500">
+                            {[...Array(5)].map((_, i) => (
+                                <FaStar key={i} />
+                            ))}
                         </div>
                     </div>
                 ))}

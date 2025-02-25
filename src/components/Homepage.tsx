@@ -115,12 +115,12 @@ const Homepage = () => {
   <h2 className="text-3xl font-semibold text-center text-gray-900">Our Projects</h2>
   <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
     {[
-      { src: "https://res.cloudinary.com/dj59omo7m/image/upload/v1740201312/WhatsApp_Image_2025-02-19_at_2.12.46_AM_rckf40.jpg", title: "Project for Kanchan Paul", description: "A stunning transformation with elegant decor and cozy ambiance." },
-      { src: "https://res.cloudinary.com/dj59omo7m/image/upload/v1740201414/WhatsApp_Image_2025-02-19_at_2.13.58_AM_scdher.jpg", title: "Project for Niraj Mishra", description: "A serene and stylish bedroom with premium furnishing and lighting." },
-      { src: "https://res.cloudinary.com/dj59omo7m/image/upload/v1740201557/WhatsApp_Image_2025-02-19_at_2.10.50_AM_ad9osi.jpg", title: "Project for Dr. Ashwariya Choudhry", description: "A sleek and functional kitchen space designed for modern homes." }
+      { src: "https://res.cloudinary.com/dj59omo7m/image/upload/v1740475085/KP_aryynd.png", title: "Project for Kanchan Paul", description: "A stunning transformation with elegant decor and cozy ambiance." },
+      { src: "https://res.cloudinary.com/dj59omo7m/image/upload/v1740475273/NM_fxjzu1.png", title: "Project for Niraj Mishra", description: "A serene and stylish bedroom with premium furnishing and lighting." },
+      { src: "https://res.cloudinary.com/dj59omo7m/image/upload/v1740473705/AC1_go2arx.jpg", title: "Project for Dr. Ashwariya Choudhry", description: "A sleek and functional kitchen space designed for modern homes." }
     ].map((project, index) => (
       <div key={index} className="flex flex-col items-center bg-gray-100 p-4 rounded-lg shadow-lg">
-        <div className="w-[400px] h-[250px] overflow-hidden rounded-lg">
+        <div className="w-[240px] h-[250px] lg:w-[400px] overflow-hidden rounded-lg">
           <Image
             src={project.src}
             alt={project.title}
