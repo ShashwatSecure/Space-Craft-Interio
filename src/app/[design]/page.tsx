@@ -1,8 +1,7 @@
+import Container from "@/components/Container";
 import { data } from "@/data";
 import Image from "next/image";
 import Link from "next/link";
-import Footer from "@/components/Footer";
-import Disclaimer from "@/components/Disclaimer";
 
 const descriptions: { [key: string]: string } = {
     "1bhk": "Explore stylish and space-efficient 1 BHK home designs perfect for modern living.",
@@ -21,7 +20,7 @@ export default async function Design({ params }: { params: Promise<{ design: str
     const description = descriptions[formattedDesign] || "Discover beautifully curated home interior designs to match your style.";
 
     return (
-        <>
+        <Container>
             <section className="mt-20 px-6">
                 <h2 className="text-3xl font-semibold text-center text-gray-900">{pageTitle}</h2>
                 <p className="text-center text-gray-600 mt-2">{description}</p>
@@ -50,8 +49,6 @@ export default async function Design({ params }: { params: Promise<{ design: str
                     ))}
                 </div>
             </section>
-            <Disclaimer />
-            <Footer />
-        </>
+        </Container>
     );
 }
