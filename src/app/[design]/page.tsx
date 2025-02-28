@@ -1,5 +1,5 @@
+import { fetchDesignsByCategory } from "@/actions/designs.action";
 import Container from "@/components/Container";
-import { data } from "@/data";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -15,7 +15,7 @@ const descriptions: { [key: string]: string } = {
 export default async function Design({ params }: { params: Promise<{ design: string }> }) {
     const { design } = await params;
     const formattedDesign = design.toLowerCase().replaceAll("-", " ");
-    const designs = data.find((val) => val.title.toLowerCase() + " design" === formattedDesign)?.items;
+    const designs = (await fetchDesignsByCategory(design)).data
     const pageTitle = formattedDesign.toUpperCase();
     const description = descriptions[formattedDesign] || "Discover beautifully curated home interior designs to match your style.";
 
