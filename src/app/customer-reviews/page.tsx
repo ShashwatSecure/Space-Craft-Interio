@@ -1,21 +1,31 @@
 "use client";
+import { fetchAllReviews } from "@/actions/reviews.action";
+import Loader from "@/components/Loader";
+import { Review } from "@prisma/client";
 import { useState, useEffect } from "react";
-import { reviewData } from "@/reviewData";
 import { FaStar } from "react-icons/fa";
 
 const ReviewsPage = () => {
     const [currentPage, setCurrentPage] = useState(1);
+    const [reviewData, setReviewData] = useState<Review[]>([])
+    const [loading, setLoading] = useState(true)
+    const [totalPages, setTotalPages] = useState(0)
     const reviewsPerPage = 4;
 
-    const totalPages = Math.ceil(reviewData.length / reviewsPerPage);
-    const startIndex = (currentPage - 1) * reviewsPerPage;
-    const selectedReviews = reviewData.slice(startIndex, startIndex + reviewsPerPage);
-
     useEffect(() => {
-        window.scrollTo({ top: 0, behavior: "smooth" });
+        ;(async () => {
+            setLoading(true)
+            window.scrollTo({ top: 0, behavior: "smooth" });
+            const response = await fetchAllReviews(currentPage, reviewsPerPage)
+            console.log(response)
+            setReviewData(response.data || [])
+            setTotalPages(Math.ceil(response.count!/reviewsPerPage))
+            setLoading(false)
+        })()
     }, [currentPage]);
 
     return (
+        !loading ?
         <div className="max-w-4xl mx-auto p-6 mt-12 md:mt-16">
             {/* Page Heading */}
             <h1 className="text-3xl font-semibold text-center text-gray-900">Customer Reviews</h1>
@@ -25,7 +35,7 @@ const ReviewsPage = () => {
             </p>
 
             <div className="space-y-6 mt-6">
-                {selectedReviews.map((review, index) => (
+                {reviewData.map((review, index) => (
                     <div key={index} className="bg-gray-100 p-6 rounded-lg shadow-md relative">
                         <p className="text-gray-700 italic">"{review.review}"</p>
                         <div className="mt-4">
@@ -45,7 +55,7 @@ const ReviewsPage = () => {
             {/* Pagination Controls */}
             <div className="flex justify-between items-center mt-6">
                 <button
-                    onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
+                    onClick={() => setCurrentPage((prev) => prev - 1)}
                     disabled={currentPage === 1}
                     className={`px-4 py-2 rounded ${currentPage === 1 ? "bg-gray-300" : "bg-green-500 text-white"}`}
                 >
@@ -53,14 +63,15 @@ const ReviewsPage = () => {
                 </button>
                 <span className="text-gray-600">Page {currentPage} of {totalPages}</span>
                 <button
-                    onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))}
-                    disabled={currentPage === totalPages}
+                    onClick={() => setCurrentPage((prev) => prev + 1)}
+                    disabled={reviewData.length < reviewsPerPage}
                     className={`px-4 py-2 rounded ${currentPage === totalPages ? "bg-gray-300" : "bg-green-500 text-white"}`}
                 >
                     Next
                 </button>
             </div>
         </div>
+        : <Loader />
     );
 };
 

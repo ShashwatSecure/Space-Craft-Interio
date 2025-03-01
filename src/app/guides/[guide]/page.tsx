@@ -4,8 +4,6 @@ import { guideData } from "@/guideData";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import { useParams } from "next/navigation";
-import Footer from "@/components/Footer";
-import Disclaimer from "@/components/Disclaimer";
 
 export default function Guide() {
   const params = useParams(); 
@@ -80,9 +78,6 @@ export default function Guide() {
           )}
         </main>
       </section>
-
-      <Disclaimer />
-      <Footer />
     </>
   );
 }

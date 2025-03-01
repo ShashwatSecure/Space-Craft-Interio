@@ -1,5 +1,14 @@
-import Image from "next/image";
-export const projectData = [
+
+interface ProjectDataType {
+  title: string
+  slug: string
+  address: string
+  workDetails: string
+  customers: string[]
+  imageUrls: string[]
+}
+
+export const projectData: ProjectDataType[] = [
     {
       title: "Project for Kanchan Paul",
       slug: "kanchan-paul-project",

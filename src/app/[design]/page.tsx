@@ -1,8 +1,7 @@
-import { data } from "@/data";
+import { fetchDesignsByCategory } from "@/actions/designs.action";
+import Container from "@/components/Container";
 import Image from "next/image";
 import Link from "next/link";
-import Footer from "@/components/Footer";
-import Disclaimer from "@/components/Disclaimer";
 
 const descriptions: { [key: string]: string } = {
     "1bhk": "Explore stylish and space-efficient 1 BHK home designs perfect for modern living.",
@@ -16,12 +15,12 @@ const descriptions: { [key: string]: string } = {
 export default async function Design({ params }: { params: Promise<{ design: string }> }) {
     const { design } = await params;
     const formattedDesign = design.toLowerCase().replaceAll("-", " ");
-    const designs = data.find((val) => val.title.toLowerCase() + " design" === formattedDesign)?.items;
+    const designs = (await fetchDesignsByCategory(design)).data
     const pageTitle = formattedDesign.toUpperCase();
     const description = descriptions[formattedDesign] || "Discover beautifully curated home interior designs to match your style.";
 
     return (
-        <>
+        <Container>
             <section className="mt-20 px-6">
                 <h2 className="text-3xl font-semibold text-center text-gray-900">{pageTitle}</h2>
                 <p className="text-center text-gray-600 mt-2">{description}</p>
@@ -50,8 +49,6 @@ export default async function Design({ params }: { params: Promise<{ design: str
                     ))}
                 </div>
             </section>
-            <Disclaimer />
-            <Footer />
-        </>
+        </Container>
     );
 }

@@ -1,0 +1,84 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Property {
+  ONE_BHK
+  TWO_BHK
+  THREE_BHK
+  FOUR_BHK_OR_DUPLEX
+}
+
+model FreeDesignConsultation {
+  id                 Int      @id @unique @default(autoincrement())
+  property           Property
+  city               City
+  name               String
+  phoneNumber        String
+  isConsultationDone Boolean  @default(false)
+  whatsappUpdates    Boolean  @default(false)
+  designId           Int
+  Design             Design   @relation(fields: [designId], references: [id], onDelete: Cascade)
+  createdAt          DateTime @default(now())
+}
+
+model Design {
+  id                     Int                      @id @unique @default(autoincrement())
+  Category               String
+  title                  String
+  imageUrl               String
+  createdAt              DateTime                 @default(now())
+  freeDesignConsultation FreeDesignConsultation[]
+}
+
+model Project {
+  id          Int      @id @unique @default(autoincrement())
+  title       String
+  slug        String
+  address     String
+  workDetails String
+  customers   String[]
+  imageUrls   String[]
+}
+
+model Review {
+  id      Int    @id @unique @default(autoincrement())
+  name    String
+  address String
+  review  String
+}
+
+enum City {
+  DELHI
+  MUMBAI
+  BANGALORE
+  HYDERABAD
+  CHENNAI
+  KOLKATA
+  PUNE
+  JAIPUR
+  AHMEDABAD
+  LUCKNOW
+  CHANDIGARH
+  KOCHI
+  INDORE
+  BHOPAL
+  VISAKHAPATNAM
+  SURAT
+  GUWAHATI
+  PATNA
+  BHUBANESWAR
+  VARANASI
+  OTHERS
+}

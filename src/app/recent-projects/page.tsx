@@ -4,8 +4,6 @@ import { projectData } from "@/projectData";
 import Image from "next/image";
 import { useState, useRef, useEffect } from "react";
 import { BiLeftArrowCircle, BiRightArrowCircle } from "react-icons/bi";
-import Footer from "@/components/Footer";
-import Disclaimer from "@/components/Disclaimer";
 
 export default function RecentProjects() {
   const [currentPage, setCurrentPage] = useState(1);
@@ -68,8 +66,6 @@ export default function RecentProjects() {
           </button>
         </div>
       </section>
-      <Disclaimer />
-      <Footer />
     </>
   );
 }

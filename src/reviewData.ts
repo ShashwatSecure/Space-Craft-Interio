@@ -1,4 +1,10 @@
-export const reviewData = [
+interface IReviewData {
+    name: string;
+    address: string;
+    review: string;
+}
+
+export const reviewData: IReviewData[] = [
     {
         name: "Kanchan Paul",
         address: "Zina Apartment, Aastha Space Town, Dimna Road, Mango, Jamshedpur",
