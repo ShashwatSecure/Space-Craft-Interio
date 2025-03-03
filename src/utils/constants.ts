@@ -1,0 +1,30 @@
+export const City = [
+    "DELHI",
+    "MUMBAI",
+    "BANGALORE",
+    "HYDERABAD",
+    "CHENNAI",
+    "KOLKATA",
+    "PUNE",
+    "JAIPUR",
+    "AHMEDABAD",
+    "LUCKNOW",
+    "CHANDIGARH",
+    "KOCHI",
+    "INDORE",
+    "BHOPAL",
+    "VISAKHAPATNAM",
+    "SURAT",
+    "GUWAHATI",
+    "PATNA",
+    "BHUBANESWAR",
+    "VARANASI",
+    "OTHERS",
+]
+
+export const Property = [
+    { value: "ONE_BHK", label: "1BHK" },
+    { value: "TWO_BHK", label: "2BHK" },
+    { value: "THREE_BHK", label: "3BHK" },
+    { value: "FOUR_BHK_OR_DUPLEX", label: "4BHK/Duplex" },
+]

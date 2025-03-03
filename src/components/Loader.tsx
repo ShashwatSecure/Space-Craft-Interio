@@ -1,11 +1,11 @@
 import { twMerge } from "tailwind-merge"
 
-function Loader({ className }: { className?: string }) {
+function Loader({ className, fill = "fill-green-500" }: { className?: string, fill?: string }) {
     return (
         <div role="status" className={twMerge("w-[100vw] h-[100vh] flex items-center justify-center", className)}>
             <svg
                 aria-hidden="true"
-                className="inline w-8 h-8 text-gray-200 animate-spin dark:text-gray-200 fill-green-500"
+                className={`inline w-8 h-8 text-gray-200 animate-spin dark:text-gray-200 ${fill}`}
                 viewBox="0 0 100 101"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
