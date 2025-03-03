@@ -38,7 +38,6 @@ import {
 import { Checkbox } from "@/components/ui/checkbox"
 import { addFreeConsultation } from "@/actions/FreeConsultation.action"
 import Loader from "./Loader"
-import Image from "next/image"
 
 export default function Quote({ id }: { id: string }) {
     const form = useForm<z.infer<typeof FreeConsultationSchema>>({

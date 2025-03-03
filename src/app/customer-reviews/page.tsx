@@ -41,7 +41,7 @@ const ReviewsPage = () => {
                         className="bg-gray-100 p-6 rounded-lg shadow-md relative"
                     >
                         <p className="text-gray-700 italic">
-                            "{review.review}"
+                            &quot;{review.review}&quot;
                         </p>
                         <div className="mt-4">
                             <h3 className="text-lg font-semibold">

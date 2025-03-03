@@ -4,7 +4,7 @@ import { fetchAllProjects } from "@/actions/projects.action"
 import Loader from "@/components/Loader"
 import { Project } from "@prisma/client"
 import Image from "next/image"
-import { useState, useRef, useEffect } from "react"
+import { useState, useEffect } from "react"
 import { BiLeftArrowCircle, BiRightArrowCircle } from "react-icons/bi"
 
 export default function RecentProjects() {
@@ -102,7 +102,7 @@ export default function RecentProjects() {
 
 const ImageCarousel = ({ images }: { images: string[] }) => {
     const [currentIndex, setCurrentIndex] = useState(0)
-    const carouselRef = useRef<HTMLDivElement>(null)
+    // const carouselRef = useRef<HTMLDivElement>(null)
 
     const prevImage = () => {
         setCurrentIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1))

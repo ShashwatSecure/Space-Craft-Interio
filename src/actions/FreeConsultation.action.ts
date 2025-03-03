@@ -1,7 +1,9 @@
 "use server"
 
 import { FreeConsultationSchema } from "@/schemas/FreeConsultation"
+import { FreeConsultationEmailTemplateGenerator } from "@/utils/constants"
 import { prismaClient } from "@/utils/prismaClient"
+import sendEmail from "@/utils/sendEmail"
 import { City, Property } from "@prisma/client"
 import { z } from "zod"
 
@@ -17,6 +19,12 @@ export const addFreeConsultation = async ({ city, designId, name, phoneNumber, p
                 designId
             }
         })
+        const design = await prismaClient.design.findFirst({
+            where: {
+                id: designId
+            }
+        })
+        await sendEmail({to: process.env.ADMIN_EMAIL || "mdrehan9007@gmail.com", html: FreeConsultationEmailTemplateGenerator("admin", name, phoneNumber, design?.title || "random design"), subject: "Request For Consultation"})
         return { success: true, data: null }
     } catch (error) {
         console.log(error)

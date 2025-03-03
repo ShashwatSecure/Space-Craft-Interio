@@ -45,7 +45,7 @@ const Navbar = () => {
         { title: "Space Saving", href: "/space-saving" },
         { title: "Home Office", href: "/home-office" },
         { title: "Bathroom", href: "/bathroom" },
-        { title: "Balcony", href: "/balcony-design" },
+        { title: "Balcony", href: "/balcony" },
         { title: "1 BHK Interior", href: "/1bhk" },
         { title: "2 BHK Interior", href: "/2bhk" },
         { title: "3 BHK Interior", href: "/3bhk" },
