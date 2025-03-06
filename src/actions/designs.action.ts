@@ -13,9 +13,9 @@ export async function fetchDesignsByCategory(category: string) {
                 }
             }
         })
-        return { success: true, data: response }
+        return { success: true, data: response || [] }
     } catch (error) {
-        console.log(error)
-        return { success: false, data: null }
+        console.error(error)
+        return { success: false, data: [] }
     }
 }

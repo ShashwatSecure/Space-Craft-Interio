@@ -34,7 +34,7 @@ const Navbar = () => {
     {
       name: "Designs",
       sublinks: [
-        { title: "All Designs", href: "/interior" },
+        { title: "All Designs", href: "/interior-design" },
         { title: "Modular Kitchen", href: "/modular-kitchen" },
         { title: "Living Room", href: "/living-room" },
         { title: "Bedroom", href: "/bedroom" },
@@ -67,22 +67,7 @@ const Navbar = () => {
         { title: "Bathroom Guides", href: "/guides/bathroom-guide" },
         { title: "Balcony Guides", href: "/guides/balcony-guide" },
       ],
-    },
-    {
-      name: "Blogs",
-      sublinks: [
-        { title: "Modular Kitchen Ideas", href: "/modular-kitchen-design" },
-        { title: "Living Room Ideas", href: "/living-room-design" },
-        { title: "Bedroom Ideas", href: "/bedroom-design" },
-        { title: "Kids Bedroom Ideas", href: "/kids-bedroom-design" },
-        { title: "Dining Room Ideas", href: "/dining-room-design" },
-        { title: "Study Room Ideas", href: "/study-room-design" },
-        { title: "Home Decor Ideas", href: "/home-decor" },
-        { title: "DC Home Tour", href: "/dc-home-tour" },
-        { title: "DC Design", href: "/dc-design" },
-        { title: "DC Updates", href: "/dc-updates" },
-      ],
-    },
+    }
   ];
 
   const handleLinkClick = () => {
