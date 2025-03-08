@@ -32,78 +32,45 @@ const Navbar = () => {
         return () => document.removeEventListener("click", handleClickOutside)
     }, [])
 
-    const menuItems = [
-        {
-            name: "Designs",
-            sublinks: [
-                { title: "All Designs", href: "/interior" },
-                { title: "Modular Kitchen", href: "/modular-kitchen" },
-                { title: "Living Room", href: "/living-room" },
-                { title: "Bedroom", href: "/bedroom" },
-                { title: "Kids Bedroom", href: "/kids-bedroom" },
-                { title: "Wardrobe", href: "/wardrobe" },
-                { title: "Dining Room", href: "/dining-room" },
-                { title: "Pooja Room", href: "/pooja-room" },
-                { title: "Space Saving", href: "/space-saving" },
-                { title: "Home Office", href: "/home-office" },
-                { title: "Bathroom", href: "/bathroom" },
-                { title: "Balcony", href: "/balcony" },
-                { title: "1 BHK Interior", href: "/1bhk" },
-                { title: "2 BHK Interior", href: "/2bhk" },
-                { title: "3 BHK Interior", href: "/3bhk" },
-            ],
-        },
-        { name: "Recent Projects", href: "/recent-projects", sublinks: [] },
-        { name: "Reviews", href: "/customer-reviews", sublinks: [] },
-        { name: "Site Services", href: "/site-services", sublinks: [] },
-        {
-            name: "Guides",
-            sublinks: [
-                {
-                    title: "Modular Kitchen Guides",
-                    href: "/guides/modular-kitchen-guide",
-                },
-                {
-                    title: "Living Room Guides",
-                    href: "/guides/living-room-guide",
-                },
-                { title: "Bedroom Guides", href: "/guides/bedroom-guide" },
-                {
-                    title: "Kids Bedroom Guides",
-                    href: "/guides/kids-bedroom-guide",
-                },
-                { title: "Wardrobe Guides", href: "/guides/wardrobe-guide" },
-                {
-                    title: "Dining Room Guides",
-                    href: "/guides/dining-room-guide",
-                },
-                {
-                    title: "Study Room Guides",
-                    href: "/guides/study-room-guide",
-                },
-                { title: "Bathroom Guides", href: "/guides/bathroom-guide" },
-                { title: "Balcony Guides", href: "/guides/balcony-guide" },
-            ],
-        },
-        {
-            name: "Blogs",
-            sublinks: [
-                {
-                    title: "Modular Kitchen Ideas",
-                    href: "/modular-kitchen-design",
-                },
-                { title: "Living Room Ideas", href: "/living-room-design" },
-                { title: "Bedroom Ideas", href: "/bedroom-design" },
-                { title: "Kids Bedroom Ideas", href: "/kids-bedroom-design" },
-                { title: "Dining Room Ideas", href: "/dining-room-design" },
-                { title: "Study Room Ideas", href: "/study-room-design" },
-                { title: "Home Decor Ideas", href: "/home-decor" },
-                { title: "DC Home Tour", href: "/dc-home-tour" },
-                { title: "DC Design", href: "/dc-design" },
-                { title: "DC Updates", href: "/dc-updates" },
-            ],
-        },
-    ]
+  const menuItems = [
+    {
+      name: "Designs",
+      sublinks: [
+        { title: "All Designs", href: "/interior-design" },
+        { title: "Modular Kitchen", href: "/modular-kitchen" },
+        { title: "Living Room", href: "/living-room" },
+        { title: "Bedroom", href: "/bedroom" },
+        { title: "Kids Bedroom", href: "/kids-bedroom" },
+        { title: "Wardrobe", href: "/wardrobe" },
+        { title: "Dining Room", href: "/dining-room" },
+        { title: "Pooja Room", href: "/pooja-room" },
+        { title: "Space Saving", href: "/space-saving" },
+        { title: "Home Office", href: "/home-office" },
+        { title: "Bathroom", href: "/bathroom" },
+        { title: "Balcony", href: "/balcony" },
+        { title: "1 BHK Interior", href: "/1bhk" },
+        { title: "2 BHK Interior", href: "/2bhk" },
+        { title: "3 BHK Interior", href: "/3bhk" },
+      ],
+    },
+    { name: "Recent Projects", href: "/recent-projects", sublinks: [] },
+    { name: "Reviews", href: "/customer-reviews", sublinks: [] },
+    { name: "Site Services", href: "/site-services", sublinks: [] },
+    {
+      name: "Guides",
+      sublinks: [
+        { title: "Modular Kitchen Guides", href: "/guides/modular-kitchen-guide" },
+        { title: "Living Room Guides", href: "/guides/living-room-guide" },
+        { title: "Bedroom Guides", href: "/guides/bedroom-guide" },
+        { title: "Kids Bedroom Guides", href: "/guides/kids-bedroom-guide" },
+        { title: "Wardrobe Guides", href: "/guides/wardrobe-guide" },
+        { title: "Dining Room Guides", href: "/guides/dining-room-guide" },
+        { title: "Study Room Guides", href: "/guides/study-room-guide" },
+        { title: "Bathroom Guides", href: "/guides/bathroom-guide" },
+        { title: "Balcony Guides", href: "/guides/balcony-guide" },
+      ],
+    }
+  ];
 
     const handleLinkClick = () => {
         setActiveDropdown(null) // Close desktop dropdown

@@ -44,7 +44,7 @@ export default function Quote({ id }: { id: string }) {
         resolver: zodResolver(FreeConsultationSchema),
         defaultValues: {
             designId: Number(id),
-            city: "KOLKATA",
+            city: "BOKARO",
             property: "ONE_BHK",
             whatsappUpdates: false,
             name: "",

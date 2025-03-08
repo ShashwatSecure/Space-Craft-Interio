@@ -131,23 +131,23 @@ const Homepage = () => {
                     {[
                         {
                             id: 1,
-                            name: "Amit Sharma",
-                            review: "Absolutely stunning designs that transformed our space!",
+                            name: "Kanchan Paul",
+                            review: "The renovation and furnishing work exceeded my expectations! My home feels brand new, and every detail was taken care of with perfection. Highly recommended!",
                         },
                         {
                             id: 2,
-                            name: "Neha Verma",
-                            review: "Great attention to detail and professional service. Highly recommended!",
+                            name: "Dr. Aishwarya Choudhry",
+                            review: "The interior work was top-notch! From design to execution, everything was handled meticulously, and my home now reflects elegance and comfort. Thank you for the amazing work!",
                         },
                         {
                             id: 3,
-                            name: "Rahul Mehta",
-                            review: "The best interior design experience! My home looks amazing now.",
+                            name: "Murli Mishra",
+                            review: "Highly professional service with outstanding results. My home has been beautifully furnished and renovated beyond my imagination. Thank you for the hard work!",
                         },
                         {
                             id: 4,
-                            name: "Priya Kapoor",
-                            review: "Elegant and stylish designs that perfectly matched our taste!",
+                            name: "Rashid Ahmad",
+                            review: "The transformation of my home is incredible! The renovation work was done with precision, and the interiors now have a luxurious feel. Great job by the team!",
                         },
                     ].map((review) => (
                         <div
@@ -173,70 +173,7 @@ const Homepage = () => {
                     </Link>
                 </div>
             </section>
-            <section className="blogs mt-16">
-                <h2 className="text-3xl font-semibold text-center text-gray-900">
-                    Get Design Ideas on Our Blogs
-                </h2>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
-                    {/* Left Side - Featured Blog */}
-                    <div className="bg-gray-100 p-6 rounded-lg shadow-lg">
-                        <Image
-                            src="/blog-featured.jpg"
-                            alt="Featured Blog"
-                            width={600}
-                            height={350}
-                            className="rounded-lg"
-                        />
-                        <h3 className="text-xl font-semibold text-gray-900 mt-4">
-                            10 Stunning Interior Design Ideas for 2025
-                        </h3>
-                        <p className="text-gray-700 mt-2">
-                            Discover the latest interior design trends that will
-                            elevate your space in 2025. From modern minimalism
-                            to vibrant aesthetics...
-                        </p>
-                        <a
-                            href="#"
-                            className="text-green-600 font-semibold mt-2 inline-block hover:underline"
-                        >
-                            Read More
-                        </a>
-                    </div>
-
-                    {/* Right Side - Blog List */}
-                    <div className="bg-gray-100 p-6 rounded-lg shadow-lg">
-                        {[
-                            "How to Choose the Perfect Color Palette for Your Home",
-                            "5 Space-Saving Ideas for Small Apartments",
-                            "Luxury vs. Budget Interiors – What Should You Choose?",
-                            "Top 7 Lighting Trends to Brighten Your Home",
-                            "Eco-Friendly Interior Design Tips for a Sustainable Home",
-                        ].map((title, index) => (
-                            <div
-                                key={index}
-                                className="border-b border-gray-300 py-3"
-                            >
-                                <a
-                                    href="#"
-                                    className="text-gray-900 font-semibold hover:text-green-600 transition"
-                                >
-                                    {title}
-                                </a>
-                            </div>
-                        ))}
-
-                        <div className="text-center mt-4">
-                            <a
-                                href="#"
-                                className="text-green-600 font-semibold hover:underline"
-                            >
-                                View All Blogs
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            
         </div>
     )
 }
