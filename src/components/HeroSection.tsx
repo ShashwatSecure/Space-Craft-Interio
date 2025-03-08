@@ -5,7 +5,7 @@ const HeroSection = () => {
     return (
         <>
             <section
-                className="relative bg-cover bg-center h-[650px] flex items-center justify-end text-right px-4 md:px-8"
+                className="relative animate-animate-appear bg-cover bg-center h-[100vh] flex items-center justify-end text-right px-4 md:px-8"
                 style={{
                     backgroundImage: "url('https://res.cloudinary.com/dj59omo7m/image/upload/v1739876742/design-showcase_secphg.jpg')",
                     backgroundPosition: "center",

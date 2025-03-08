@@ -13,6 +13,35 @@ export default {
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)'
   		},
+		  keyframes: {
+			appear: {
+				"from": {
+					opacity: 0,
+					transform: "translateY(10px)"
+				},
+				"to": {
+					opacity: 1,
+					transform: "translateY(0px)"
+				}
+			},
+
+			loader: {
+				"from": {
+					opacity: 0.3,
+					transform: "translateY(10px)"
+				},
+				"to": {
+					opacity: 1,
+					transform: "translateY(0px)"
+				}
+			}
+		},
+		animation: {
+			'animate-appear': 'appear 0.5s ease-in-out',
+			'animate-disappear': 'appear 0.5s ease-in-out reverse',
+			// 'bounce-once': 'bounce 1s ease-in-out infinite 2s',
+			'loader-animation': 'loader 1s linear infinite alternate'
+		},
   		colors: {
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
