@@ -1,10 +1,11 @@
-import React from "react";
-import { data } from "@/data";
+// import React from "react";
+// import { data } from "@/data";
 // import { motion } from "framer-motion";
+import { fetchAllDesigns } from "@/actions/designs.action";
 import Carousel from "./designs-carousel/Carousel";
 
-const InteriorDesign = () => {
-    const interiors = data
+const InteriorDesign = async () => {
+    const interiors = (await fetchAllDesigns()).data
 
     return (
         <>
@@ -29,10 +30,9 @@ const InteriorDesign = () => {
                 <div className="w-[90%] mx-4 space-y-4">
                     {interiors.map((interior) => (
                         <Carousel
-                            // id={}
-                            title={interior.title}
+                            title={interior.category}
                             items={interior.items}
-                            key={interior.title}
+                            key={interior.category}
                         />
                     ))}
                 </div>

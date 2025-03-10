@@ -1,3 +1,5 @@
+"use client"
+
 import useIntersectionObserver from "@/hooks/useIntersectionObserver"
 import Card from "./Card"
 import {
@@ -13,6 +15,7 @@ interface CarouselProps {
     items: Array<{
         title: string
         imageUrl: string
+        id: number
     }>
 }
 
@@ -28,7 +31,7 @@ const CustomCarousel = ({ title, items }: CarouselProps) => {
             <CarouselContent>
                 {items.map((item) => (
                     <CarouselItem key={item.title} className="basis-1/3">
-                        <Card {...item} key={item.title} />
+                        <Card {...item} key={item.title} id={item.id.toString()} />
                     </CarouselItem>
                 ))}
             </CarouselContent>
