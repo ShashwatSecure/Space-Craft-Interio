@@ -3,13 +3,16 @@
 import React, { useState, useEffect } from "react"
 import { FaBars, FaTimes } from "react-icons/fa"
 import Link from "next/link"
-import { ArrowDownAZ, ChevronDown, ChevronUp } from "lucide-react"
+import { ChevronDown, ChevronUp } from "lucide-react"
 import Button from "./Button"
+import { usePathname } from "next/navigation"
+import path from "path"
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false)
     const [activeDropdown, setActiveDropdown] = useState<number | null>(null)
     const [mobileDropdown, setMobileDropdown] = useState<number | null>(null)
+    const pathname = usePathname()
 
     // Toggle dropdown for desktop
     const handleDropdown = (index: number) => {
@@ -35,6 +38,7 @@ const Navbar = () => {
   const menuItems = [
     {
       name: "Designs",
+      link: "/designs",
       sublinks: [
         { title: "All Designs", href: "/interior-design" },
         { title: "Modular Kitchen", href: "/modular-kitchen" },
@@ -58,16 +62,17 @@ const Navbar = () => {
     { name: "Site Services", href: "/site-services", sublinks: [] },
     {
       name: "Guides",
+      link: "guides",
       sublinks: [
-        { title: "Modular Kitchen Guides", href: "/guides/modular-kitchen-guide" },
-        { title: "Living Room Guides", href: "/guides/living-room-guide" },
-        { title: "Bedroom Guides", href: "/guides/bedroom-guide" },
-        { title: "Kids Bedroom Guides", href: "/guides/kids-bedroom-guide" },
-        { title: "Wardrobe Guides", href: "/guides/wardrobe-guide" },
-        { title: "Dining Room Guides", href: "/guides/dining-room-guide" },
-        { title: "Study Room Guides", href: "/guides/study-room-guide" },
-        { title: "Bathroom Guides", href: "/guides/bathroom-guide" },
-        { title: "Balcony Guides", href: "/guides/balcony-guide" },
+        { title: "Modular Kitchen Guides", href: "/modular-kitchen-guide" },
+        { title: "Living Room Guides", href: "/living-room-guide" },
+        { title: "Bedroom Guides", href: "/bedroom-guide" },
+        { title: "Kids Bedroom Guides", href: "/kids-bedroom-guide" },
+        { title: "Wardrobe Guides", href: "/wardrobe-guide" },
+        { title: "Dining Room Guides", href: "/dining-room-guide" },
+        { title: "Study Room Guides", href: "/study-room-guide" },
+        { title: "Bathroom Guides", href: "/bathroom-guide" },
+        { title: "Balcony Guides", href: "/balcony-guide" },
       ],
     }
   ];
@@ -79,7 +84,7 @@ const Navbar = () => {
     }
 
     return (
-        <nav className="bg-white shadow-md fixed top-0 w-full z-50">
+        <nav className="bg-white shadow-sm fixed top-0 w-full z-50">
             <div className="container mx-auto flex justify-between items-center p-4">
                 {/* Logo */}
                 <div className="text-2xl font-bold text-gray-800">
@@ -104,7 +109,7 @@ const Navbar = () => {
                                 <>
                                     <button
                                         onClick={() => handleDropdown(index)}
-                                        className="hover:text-orange-500 transition duration-300"
+                                        className={`hover:text-orange-500 transition duration-300 ${pathname.includes(item.link || "//") && 'text-orange-500'}`}
                                     >
                                         <span>{item.name}</span>
                                         {activeDropdown === index ? (
@@ -122,7 +127,7 @@ const Navbar = () => {
                                                         className="px-4 py-2 hover:bg-gray-100"
                                                     >
                                                         <Link
-                                                            href={sublink.href}
+                                                            href={path.join("/", item.link!, sublink.href)}
                                                             className="text-gray-600 text-sm block"
                                                             onClick={
                                                                 handleLinkClick
@@ -139,7 +144,7 @@ const Navbar = () => {
                             ) : (
                                 <Link
                                     href={item.href || "#"}
-                                    className="hover:text-orange-500 transition duration-300"
+                                    className={`hover:text-orange-500 transition duration-300 ${pathname === item.href && 'text-orange-500'}`}
                                     onClick={handleLinkClick}
                                 >
                                     {item.name}

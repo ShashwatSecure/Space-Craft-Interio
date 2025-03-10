@@ -4,7 +4,7 @@ import HomePageSection from "./HomePageSection"
 
 const Homepage = () => {
     return (
-        <div className="homepage px-4 md:px-8 lg:px-12">
+        <div className="px-4 md:px-8 lg:px-12">
             {/* Home Interiors Made Easy Section */}
             <HomePageSection
                 key={1}

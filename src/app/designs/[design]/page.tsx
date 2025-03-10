@@ -31,16 +31,16 @@ export default async function Design({
 
     return (
         <Container className="relative">
-            <section className="mt-20 px-6">
+            <section className="mt-24 px-6 animate-animate-appear">
                 <h2 className="text-3xl font-semibold text-center text-gray-900">
                     {pageTitle}
                 </h2>
                 <p className="text-center text-gray-600 mt-2">{description}</p>
-                <div className="mt-6 flex flex-col items-center">
+                <div className="mt-6 grid grid-cols-2 justify-items-center content-center gap-6 px-32">
                     {designs?.map((dsgn, index) => (
                         <div
                             key={index}
-                            className="w-full md:w-3/4 px-20 lg:w-2/3 py-4 mb-6 bg-gray-100 rounded-sm shadow-lg flex flex-col items-center justify-start"
+                            className="w-full group px-6 hover:shadow-md transition-all relative cursor-pointer py-4 mb-0 bg-gray-100 rounded-sm shadow-sm flex flex-col items-center justify-start"
                         >
                             <Image
                                 src={dsgn.imageUrl}
@@ -52,13 +52,18 @@ export default async function Design({
                             <h3 className="text-sm w-full text-start font-semibold text-gray-800 mt-4">
                                 {dsgn.title.replaceAll("-", " ").toUpperCase()}
                             </h3>
-                            <p className="text-gray-600 mt-2 w-full text-start">
+                            <p className="text-gray-600 mt-1 w-full text-start text-sm">
                                 {`A beautifully designed ${dsgn.title.replaceAll(
                                     "-",
                                     " "
                                 )} to enhance your ${formattedDesign} home.`}
                             </p>
-                            <Quote id={dsgn.id.toString()} />
+                            <div className="absolute top-0 left-0 w-full h-full bg-transparent hover:bg-black hover:bg-opacity-20 duration-300 transition-all hover:backdrop-blur-[1px] rounded-md">
+                                <Quote
+                                    id={dsgn.id.toString()}
+                                    className=" hidden group-hover:block absolute translate-x-[-50%] translate-y-[-50%] top-[50%] left-[50%]"
+                                />
+                            </div>
                         </div>
                     ))}
                 </div>

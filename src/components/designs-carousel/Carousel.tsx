@@ -1,8 +1,12 @@
-"use client"
-
-import { BiLeftArrowCircle, BiRightArrowCircle } from "react-icons/bi"
+import useIntersectionObserver from "@/hooks/useIntersectionObserver"
 import Card from "./Card"
-import { useRef } from "react"
+import {
+    Carousel,
+    CarouselContent,
+    CarouselItem,
+    CarouselNext,
+    CarouselPrevious,
+} from "@/components/ui/carousel"
 
 interface CarouselProps {
     title: string
@@ -12,50 +16,26 @@ interface CarouselProps {
     }>
 }
 
-const Carousel = ({ title, items }: CarouselProps) => {
-    const carouselRef = useRef<HTMLDivElement>(null)
-    const carouselWidthRef = useRef<number>(1)
-    return (
-        <div className="w-auto">
-            <h2 className="text-2xl font-semibold w-full text-center mb-3 uppercase text-gray-700">{title}</h2>
-            <div className="w-[100%] flex items-center justify-between relative">
-                <BiLeftArrowCircle
-    className="text-6xl text-gray-400 cursor-pointer"
-    onClick={() => {
-        if (carouselWidthRef.current > 1) {
-            carouselWidthRef.current -= 1;
-        }
-        const translateValue = window.innerWidth >= 1024 ? 30 : 82;
-        carouselRef.current!.style.transform = `translateX(-${
-            carouselWidthRef.current * translateValue - translateValue
-        }vw)`;
-    }}
-/>
+const CustomCarousel = ({ title, items }: CarouselProps) => {
 
-                <div className="w-[100vw] h-[500px] relative overflow-x-hidden">
-                    <div
-                        ref={carouselRef}
-                        className="w-auto scroll-smooth transition-transform h-[60vh] absolute top-0 left-0 flex items-center justify-start gap-0"
-                    >
-                        {items.map((item) => (
-                            <Card {...item} key={item.title} />
-                        ))}
-                    </div>
-                </div>
-                <BiRightArrowCircle
-                    className="text-6xl text-gray-400 cursor-pointer"
-                    onClick={() => {
-                        const translateValue = window.innerWidth >= 1024 ? 29 : 82;
-                        carouselRef.current!.style.transform = `translateX(-${
-                            carouselWidthRef.current * translateValue
-                        }vw)`;
-                        if (carouselWidthRef.current < items.length - 3)
-                            carouselWidthRef.current += 1;
-                    }}
-                />
-            </div>
-        </div>
+    const { targetRef } = useIntersectionObserver()
+
+    return (
+        <Carousel ref={targetRef}>
+            <h2 className="text-2xl font-semibold w-full text-center mb-3 uppercase text-gray-700">
+                {title}
+            </h2>
+            <CarouselContent>
+                {items.map((item) => (
+                    <CarouselItem key={item.title} className="basis-1/3">
+                        <Card {...item} key={item.title} />
+                    </CarouselItem>
+                ))}
+            </CarouselContent>
+            <CarouselPrevious />
+            <CarouselNext />
+        </Carousel>
     )
 }
 
-export default Carousel
+export default CustomCarousel

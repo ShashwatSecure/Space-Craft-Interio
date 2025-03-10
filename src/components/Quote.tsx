@@ -15,6 +15,7 @@ import {
 } from "./ui/form"
 import { Button } from "./ui/button"
 import { Input } from "./ui/input"
+import CustomButton from "./Button"
 import {
     Dialog,
     DialogContent,
@@ -39,7 +40,7 @@ import { Checkbox } from "@/components/ui/checkbox"
 import { addFreeConsultation } from "@/actions/FreeConsultation.action"
 import Loader from "./Loader"
 
-export default function Quote({ id }: { id: string }) {
+export default function Quote({ id, className }: { id: string; className?: string }) {
     const form = useForm<z.infer<typeof FreeConsultationSchema>>({
         resolver: zodResolver(FreeConsultationSchema),
         defaultValues: {
@@ -58,17 +59,17 @@ export default function Quote({ id }: { id: string }) {
 
     return (
         <Dialog>
-            <DialogTrigger>
-                <div className="mt-4 bg-green-500 self-end text-white px-6 py-2 rounded-lg hover:bg-green-600 transition duration-300">
+            <DialogTrigger asChild className={className}>
+                <CustomButton className="mt-4 hover:bg-orange-200 hover:border-transparent" onClick={() => console.log("hii")}>
                     Get Quote
-                </div>
+                </CustomButton>
             </DialogTrigger>
 
             <DialogContent>
                 {!form.formState.isSubmitted ? (
                     <>
                         <DialogHeader>
-                            <DialogTitle>
+                            <DialogTitle className="text-orange-500">
                                 Get Your Free Consultation Now
                             </DialogTitle>
                             <DialogDescription>
@@ -88,7 +89,7 @@ export default function Quote({ id }: { id: string }) {
                                     name="name"
                                     render={({ field }) => (
                                         <FormItem>
-                                            <FormLabel>Name</FormLabel>
+                                            <FormLabel className="text-orange-500">Name</FormLabel>
                                             <FormControl>
                                                 <Input
                                                     placeholder="For Ex. Rohit Verma"
@@ -104,7 +105,7 @@ export default function Quote({ id }: { id: string }) {
                                     name="phoneNumber"
                                     render={({ field }) => (
                                         <FormItem>
-                                            <FormLabel>Phone Number</FormLabel>
+                                            <FormLabel className="text-orange-500">Phone Number</FormLabel>
                                             <FormControl>
                                                 <Input
                                                     placeholder="For Ex. 9234697581"
@@ -120,7 +121,7 @@ export default function Quote({ id }: { id: string }) {
                                     name="property"
                                     render={({ field }) => (
                                         <FormItem>
-                                            <FormLabel>Property</FormLabel>
+                                            <FormLabel className="text-orange-500">Property</FormLabel>
                                             <FormControl>
                                                 <RadioGroup
                                                     onValueChange={
@@ -142,6 +143,7 @@ export default function Quote({ id }: { id: string }) {
                                                                         value={
                                                                             property.value
                                                                         }
+                                                                        className="checked:text-orange-500"
                                                                     />
                                                                 </FormControl>
                                                                 <FormLabel className="font-normal">
@@ -163,7 +165,7 @@ export default function Quote({ id }: { id: string }) {
                                     name="city"
                                     render={({ field }) => (
                                         <FormItem className="flex flex-col">
-                                            <FormLabel>City</FormLabel>
+                                            <FormLabel className="text-orange-500">City</FormLabel>
                                             <Popover>
                                                 <PopoverTrigger asChild>
                                                     <FormControl>
@@ -264,12 +266,12 @@ export default function Quote({ id }: { id: string }) {
                                 <Button
                                     type="submit"
                                     disabled={form.formState.isSubmitting || !form.formState.isValid}
-                                    className="w-full"
+                                    className="w-full bg-orange-500 hover:bg-orange-700"
                                 >
                                     {form.formState.isSubmitting ? (
                                         <Loader
                                             className="w-full h-full"
-                                            fill="fill-gray-500"
+                                            fill="fill-orange-900"
                                         />
                                     ) : (
                                         <>Book Now</>

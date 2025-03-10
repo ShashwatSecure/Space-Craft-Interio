@@ -2,8 +2,8 @@
 
 import Image from "next/image"
 import Button from "./Button"
-import { useEffect, useRef } from "react"
 import { useRouter } from "next/navigation"
+import useIntersectionObserver from "@/hooks/useIntersectionObserver"
 
 interface Cards {
     imageUrl: string
@@ -27,32 +27,18 @@ export default function HomePageSection({
     url
 }: HomePageSectionProps) {
 
-    const observerRef = useRef<IntersectionObserver | null>(null)
-    const targetRef = useRef<HTMLDivElement | null>(null)
     const router = useRouter()
 
-    useEffect(() => {
-        if(!observerRef.current) {
-            observerRef.current = new IntersectionObserver((entries) => {
-                if(entries[0].isIntersecting)
-                    entries[0].target.classList.add("animate-animate-appear")
-                else
-                    entries[0].target.classList.remove("animate-animate-appear")
-            }, {
-                threshold: 0
-            })
-            observerRef.current.observe(targetRef.current!)
-        }
-    }, [])
+    const { targetRef } = useIntersectionObserver()
 
     return (
-        <section className="popular-designs mt-16">
+        <section className="mt-16">
             <h2 className="text-3xl font-semibold text-center text-gray-900">
                 {title}
             </h2>
             <p className="text-center text-gray-600 mt-2">{description}</p>
 
-            <div className={`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-${cards.length} gap-6 mt-6`} ref={targetRef}>
+            <div className={`grid grid-cols-1 sm:grid-cols-2 ${cards.length ? `md:grid-cols-${cards.length}` : 'md:grid-cols-4'} gap-6 mt-6`} ref={targetRef}>
                 {cards.map((design) => (
                     <div
                         key={design.title}
