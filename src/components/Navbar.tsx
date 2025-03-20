@@ -7,6 +7,7 @@ import { ChevronDown, ChevronUp } from "lucide-react"
 import Button from "./Button"
 import { usePathname } from "next/navigation"
 import path from "path"
+import { menuItems } from "@/utils/constants"
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false)
@@ -34,48 +35,6 @@ const Navbar = () => {
         document.addEventListener("click", handleClickOutside)
         return () => document.removeEventListener("click", handleClickOutside)
     }, [])
-
-  const menuItems = [
-    {
-      name: "Designs",
-      link: "/designs",
-      sublinks: [
-        { title: "All Designs", href: "/interior-design" },
-        { title: "Modular Kitchen", href: "/modular-kitchen" },
-        { title: "Living Room", href: "/living-room" },
-        { title: "Bedroom", href: "/bedroom" },
-        { title: "Kids Bedroom", href: "/kids-bedroom" },
-        { title: "Wardrobe", href: "/wardrobe" },
-        { title: "Dining Room", href: "/dining-room" },
-        { title: "Pooja Room", href: "/pooja-room" },
-        { title: "Space Saving", href: "/space-saving" },
-        { title: "Home Office", href: "/home-office" },
-        { title: "Bathroom", href: "/bathroom" },
-        { title: "Balcony", href: "/balcony" },
-        { title: "1 BHK Interior", href: "/1bhk" },
-        { title: "2 BHK Interior", href: "/2bhk" },
-        { title: "3 BHK Interior", href: "/3bhk" },
-      ],
-    },
-    { name: "Recent Projects", href: "/recent-projects", sublinks: [] },
-    { name: "Reviews", href: "/customer-reviews", sublinks: [] },
-    { name: "Site Services", href: "/site-services", sublinks: [] },
-    {
-      name: "Guides",
-      link: "guides",
-      sublinks: [
-        { title: "Modular Kitchen Guides", href: "/modular-kitchen-guide" },
-        { title: "Living Room Guides", href: "/living-room-guide" },
-        { title: "Bedroom Guides", href: "/bedroom-guide" },
-        { title: "Kids Bedroom Guides", href: "/kids-bedroom-guide" },
-        { title: "Wardrobe Guides", href: "/wardrobe-guide" },
-        { title: "Dining Room Guides", href: "/dining-room-guide" },
-        { title: "Study Room Guides", href: "/study-room-guide" },
-        { title: "Bathroom Guides", href: "/bathroom-guide" },
-        { title: "Balcony Guides", href: "/balcony-guide" },
-      ],
-    }
-  ];
 
     const handleLinkClick = () => {
         setActiveDropdown(null) // Close desktop dropdown

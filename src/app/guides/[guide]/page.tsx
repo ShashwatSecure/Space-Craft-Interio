@@ -1,6 +1,6 @@
 "use client"
 
-import { GuideData, guideData } from "@/guideData"
+import { data, GuideData, guideData } from "@/guideData"
 import Image from "next/image"
 import { useState, useEffect } from "react"
 import { useParams } from "next/navigation"
@@ -72,8 +72,8 @@ export default function Guide() {
                             <h2 className="text-3xl font-semibold text-gray-900">
                                 {selectedContent.title}
                             </h2>
-                            <p className="text-gray-600 mt-2">
-                                {selectedContent.description}
+                            <p className="text-gray-600 mt-2" dangerouslySetInnerHTML={{__html: data}}>
+                                {/* {selectedContent.description} */}
                             </p>
 
                             <div className="mt-6">

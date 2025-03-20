@@ -24,7 +24,7 @@ const ReviewsPage = () => {
     }, [currentPage])
 
     return !loading ? (
-        <div className="max-w-4xl mx-auto p-6 mt-12 md:mt-16">
+        <div className="max-w-4xl mx-auto p-6 mt-12 md:mt-16 animate-animate-appear">
             {/* Page Heading */}
             <h1 className="text-3xl font-semibold text-center text-gray-900">
                 Customer Reviews
@@ -34,7 +34,7 @@ const ReviewsPage = () => {
                 See what our happy customers have to say about our services!
             </p>
 
-            <div className="space-y-6 mt-6">
+            <div className="space-y-6 mt-6 animate-animate-appear">
                 {reviewData.map((review, index) => (
                     <div
                         key={index}

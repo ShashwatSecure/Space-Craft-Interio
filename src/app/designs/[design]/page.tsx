@@ -47,7 +47,7 @@ export default async function Design({
                                 alt={dsgn.title}
                                 width={800}
                                 height={500}
-                                className="rounded-lg"
+                                className="rounded-lg h-[50vh]"
                             />
                             <h3 className="text-sm w-full text-start font-semibold text-gray-800 mt-4">
                                 {dsgn.title.replaceAll("-", " ").toUpperCase()}
@@ -58,7 +58,7 @@ export default async function Design({
                                     " "
                                 )} to enhance your ${formattedDesign} home.`}
                             </p>
-                            <div className="absolute top-0 left-0 w-full h-full bg-transparent hover:bg-black hover:bg-opacity-20 duration-300 transition-all hover:backdrop-blur-[1px] rounded-md">
+                            <div className="absolute top-0 left-0 w-full h-full bg-transparent hover:bg-gray-200 hover:bg-opacity-30 duration-300 transition-all hover:backdrop-blur-[1px] rounded-md">
                                 <Quote
                                     id={dsgn.id.toString()}
                                     className=" hidden group-hover:block absolute translate-x-[-50%] translate-y-[-50%] top-[50%] left-[50%]"

@@ -283,7 +283,7 @@ export default function Quote({ id, className }: { id: string; className?: strin
                 ) : (
                     <div className="flex flex-col items-start justify-start gap-2">
                         <DialogHeader>
-                            <DialogTitle className="text-xl">
+                            <DialogTitle className="text-xl text-orange-500">
                                 Consultation Book Successfully!
                             </DialogTitle>
                             <DialogDescription>
@@ -292,7 +292,7 @@ export default function Quote({ id, className }: { id: string; className?: strin
                             </DialogDescription>
                         </DialogHeader>
                         <DialogTrigger asChild>
-                            <Button className="self-end">Close</Button>
+                            <CustomButton className="self-end">Close</CustomButton>
                         </DialogTrigger>
                     </div>
                 )}
