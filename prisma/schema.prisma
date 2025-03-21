@@ -23,7 +23,7 @@ model FreeDesignConsultation {
 model Design {
   id                     Int                      @id @unique @default(autoincrement())
   Category               String
-  title                  String
+  title                  String                   @unique
   imageUrl               String
   createdAt              DateTime                 @default(now())
   freeDesignConsultation FreeDesignConsultation[]
@@ -48,18 +48,18 @@ model Review {
 }
 
 model Guide {
-  id Int @id @unique @default(autoincrement())
-  title String
+  id          Int            @id @unique @default(autoincrement())
+  title       String
   description String
-  content GuideContent[]
+  content     GuideContent[]
 }
 
 model GuideContent {
-  id Int @id @unique @default(autoincrement())
+  id      Int    @id @unique @default(autoincrement())
   heading String
-  value String
+  value   String
   guideId Int
-  guide Guide @relation(fields: [guideId], references: [id], onDelete: Cascade)
+  guide   Guide  @relation(fields: [guideId], references: [id], onDelete: Cascade)
 }
 
 enum Property {

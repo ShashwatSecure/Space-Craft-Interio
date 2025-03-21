@@ -20,8 +20,8 @@ export default async function Guide({
     })
 
     return (
-        <div className="w-[100vw] h-[100vh] flex items-center justify-start gap-0">
-            <div className="w-[25%] h-full p-4 bg-gray-200 text-gray-600 text-sm flex flex-col gap-4 py-32">
+        <div className="w-[100vw] h-[100vh] flex items-center justify-start gap-0 animate-animate-appear">
+            <div className="w-[25%] h-full p-4 bg-gray-100 text-gray-600 text-sm flex flex-col gap-4 py-32">
                 {guideData?.content.map((guideContent, index) => (
                     <Link className="w-full px-4 hover:underline" href={`/guides/${guide}#${guideContent.heading}`} key={guideContent.id}>{index+1}.{" "}{guideContent.heading}</Link>
                 ))}
