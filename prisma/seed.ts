@@ -3,6 +3,7 @@ import { data } from "../src/data"
 import { PrismaClient } from "@prisma/client"
 import { reviewData } from "../src/reviewData"
 import { freeConsultations } from "../src/consultationData"
+import { guides } from "../src/guideData"
 const prisma = new PrismaClient()
 async function main() {
     data.map((d) => {
@@ -31,6 +32,20 @@ async function main() {
         await prisma.freeDesignConsultation.create({
             data: consultation,
             include: { Design: true },
+        })
+    })
+
+    guides.map(async (guide) => {
+        await prisma.guide.create({
+            data: {
+                title: guide.title,
+                description: guide.description,
+                content: {
+                    createMany: {
+                        data: guide.content,
+                    },
+                },
+            },
         })
     })
 }

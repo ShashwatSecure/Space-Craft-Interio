@@ -47,6 +47,21 @@ model Review {
   rating  Int    @default(4)
 }
 
+model Guide {
+  id Int @id @unique @default(autoincrement())
+  title String
+  description String
+  content GuideContent[]
+}
+
+model GuideContent {
+  id Int @id @unique @default(autoincrement())
+  heading String
+  value String
+  guideId Int
+  guide Guide @relation(fields: [guideId], references: [id], onDelete: Cascade)
+}
+
 enum Property {
   ONE_BHK
   TWO_BHK

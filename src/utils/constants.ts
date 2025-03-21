@@ -82,12 +82,8 @@ export const menuItems = [
             { title: "Modular Kitchen Guides", href: "/modular-kitchen-guide" },
             { title: "Living Room Guides", href: "/living-room-guide" },
             { title: "Bedroom Guides", href: "/bedroom-guide" },
-            { title: "Kids Bedroom Guides", href: "/kids-bedroom-guide" },
-            { title: "Wardrobe Guides", href: "/wardrobe-guide" },
-            { title: "Dining Room Guides", href: "/dining-room-guide" },
-            { title: "Study Room Guides", href: "/study-room-guide" },
+            { title: "Home Office Guides", href: "/home-office-guide" },
             { title: "Bathroom Guides", href: "/bathroom-guide" },
-            { title: "Balcony Guides", href: "/balcony-guide" },
         ],
     },
 ]
