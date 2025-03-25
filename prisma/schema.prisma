@@ -7,6 +7,16 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model Design {
+  id                     Int                      @id @unique @default(autoincrement())
+  Category               String
+  title                  String                   @unique
+  imageUrl               String
+  createdAt              DateTime                 @default(now())
+  FreeDesignConsultation FreeDesignConsultation[]
+  DesignsViewedInSession DesignsViewedInSession[]
+}
+
 model FreeDesignConsultation {
   id                 Int      @id @unique @default(autoincrement())
   property           Property
@@ -18,15 +28,6 @@ model FreeDesignConsultation {
   createdAt          DateTime @default(now())
   designId           Int
   Design             Design   @relation(fields: [designId], references: [id], onDelete: Cascade)
-}
-
-model Design {
-  id                     Int                      @id @unique @default(autoincrement())
-  Category               String
-  title                  String                   @unique
-  imageUrl               String
-  createdAt              DateTime                 @default(now())
-  freeDesignConsultation FreeDesignConsultation[]
 }
 
 model Project {
@@ -48,10 +49,10 @@ model Review {
 }
 
 model Guide {
-  id          Int            @id @unique @default(autoincrement())
-  title       String
-  description String
-  content     GuideContent[]
+  id           Int            @id @unique @default(autoincrement())
+  title        String
+  description  String
+  GuideContent GuideContent[]
 }
 
 model GuideContent {
@@ -59,14 +60,29 @@ model GuideContent {
   heading String
   value   String
   guideId Int
-  guide   Guide  @relation(fields: [guideId], references: [id], onDelete: Cascade)
+  Guide   Guide  @relation(fields: [guideId], references: [id], onDelete: Cascade)
 }
 
-enum Property {
-  ONE_BHK
-  TWO_BHK
-  THREE_BHK
-  FOUR_BHK_OR_DUPLEX
+model Session {
+  id    Int    @id @unique @default(autoincrement())
+  token String @unique @default(uuid())
+
+  city      String
+  latitude  String
+  longitude String
+
+  visits                 Int                      @default(1)
+  designsId              Int[]
+  DesignsViewedInSession DesignsViewedInSession[]
+}
+
+model DesignsViewedInSession {
+  id        Int @unique @default(autoincrement())
+  sessionId Int
+  designId  Int
+
+  Session Session @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+  Design  Design  @relation(fields: [designId], references: [id], onDelete: Cascade)
 }
 
 enum City {
@@ -82,4 +98,11 @@ enum City {
   SARAIKELA
   WEST_SINGHBHUM
   OTHERS
+}
+
+enum Property {
+  ONE_BHK
+  TWO_BHK
+  THREE_BHK
+  FOUR_BHK_OR_DUPLEX
 }

@@ -6,47 +6,70 @@ import { freeConsultations } from "../src/consultationData"
 import { guides } from "../src/guideData"
 const prisma = new PrismaClient()
 async function main() {
-    data.map((d) => {
-        const category = d.title
-        d.items.map(async (item) => {
-            await prisma.design.create({
-                data: {
-                    Category: category,
-                    title: item.title,
-                    imageUrl: item.imageUrl,
-                },
-            })
-        })
-    })
-    projectData.map(async (data) => {
-        await prisma.project.create({
-            data: { ...data },
-        })
-    })
-    reviewData.map(async (data) => {
-        await prisma.review.create({
-            data: data,
-        })
-    })
-    freeConsultations.map(async (consultation) => {
-        await prisma.freeDesignConsultation.create({
-            data: consultation,
-            include: { Design: true },
-        })
-    })
+    /*
+        Only seed those tables which dont have any values.
+        And write all the dependent tables in then block
+    */
 
-    guides.map(async (guide) => {
-        await prisma.guide.create({
-            data: {
-                title: guide.title,
-                description: guide.description,
-                content: {
-                    createMany: {
-                        data: guide.content,
-                    },
-                },
-            },
-        })
+    const designCount = await prisma.design.count()
+    const projectCount = await prisma.project.count()
+    const reviewCount = await prisma.review.count()
+    const guideCount = await prisma.guide.count()
+    const consultationCount = await prisma.freeDesignConsultation.count()
+
+    await new Promise((res, rej) => {
+        // if (projectCount == 0)
+        //     projectData.map(async (data) => {
+        //         await prisma.project.create({
+        //             data: { ...data },
+        //         })
+        //     })
+
+        // if (reviewCount == 0)
+        //     reviewData.map(async (data) => {
+        //         await prisma.review.create({
+        //             data: data,
+        //         })
+        //     })
+
+        // if (guideCount == 0)
+        //     guides.map(async (guide) => {
+        //         await prisma.guide.create({
+        //             data: {
+        //                 title: guide.title,
+        //                 description: guide.description,
+        //                 GuideContent: {
+        //                     createMany: {
+        //                         data: guide.content,
+        //                     },
+        //                 },
+        //             },
+        //         })
+        //     })
+        // if (designCount == 0) {
+        //     data.map((d) => {
+        //         const category = d.title
+        //         d.items.map(async (item) => {
+        //             await prisma.design.create({
+        //                 data: {
+        //                     Category: category,
+        //                     title: item.title,
+        //                     imageUrl: item.imageUrl,
+        //                 },
+        //             })
+        //         })
+        //     })
+        // }
+        res(true)
+    })
+    .then(() => {
+        if (consultationCount == 0)
+            freeConsultations.map(async (consultation) => {
+                await prisma.freeDesignConsultation.create({
+                    data: consultation,
+                    include: { Design: true },
+                })
+            })
     })
 }
 main()
