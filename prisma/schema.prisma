@@ -14,7 +14,6 @@ model Design {
   imageUrl               String
   createdAt              DateTime                 @default(now())
   FreeDesignConsultation FreeDesignConsultation[]
-  DesignsViewedInSession DesignsViewedInSession[]
 }
 
 model FreeDesignConsultation {
@@ -71,18 +70,17 @@ model Session {
   latitude  String
   longitude String
 
-  visits                 Int                      @default(1)
-  designsId              Int[]
-  DesignsViewedInSession DesignsViewedInSession[]
+  visits         Int              @default(1)
+  designCategory DesignCategory[]
 }
 
-model DesignsViewedInSession {
-  id        Int @unique @default(autoincrement())
+model DesignCategory {
   sessionId Int
-  designId  Int
-
+  visits    Int @default(1)
+  design String
   Session Session @relation(fields: [sessionId], references: [id], onDelete: Cascade)
-  Design  Design  @relation(fields: [designId], references: [id], onDelete: Cascade)
+
+  @@id([sessionId, design])
 }
 
 enum City {

@@ -1,6 +1,7 @@
 import { fetchDesignsByCategory } from "@/actions/designs.action"
 import Container from "@/components/Container"
 import Quote from "@/components/Quote"
+import { cookies } from "next/headers"
 import Image from "next/image"
 
 const descriptions: { [key: string]: string } = {
@@ -28,6 +29,13 @@ export default async function Design({
     const description =
         descriptions[formattedDesign] ||
         "Discover beautifully curated home interior designs to match your style."
+    
+    // Updating the session for design view
+    const cookieStore = await cookies()
+    await fetch(
+        `${process.env.NEXT_PUBLIC_SERVER_URL}/session`,
+        { method: "PUT", body: JSON.stringify({ designCategory: design }), headers: { Cookie: cookieStore.getAll().map(cookie => `${cookie.name}=${cookie.value}`).join('; ') } }
+    )
 
     return (
         <Container className="relative">

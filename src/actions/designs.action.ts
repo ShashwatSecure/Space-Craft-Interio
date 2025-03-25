@@ -1,7 +1,6 @@
 "use server"
 
 import { prismaClient } from "@/utils/prismaClient"
-import { Design, Prisma } from "@prisma/client"
 
 export async function fetchDesignsByCategory(category: string) {
     
@@ -29,7 +28,7 @@ export async function fetchAllDesigns() {
         })
 
         const allDesigns: Array<{category: string; items: Array<{ id: number, title: string, imageUrl: string }>}> = []
-        for(let category of categories) {
+        for(const category of categories) {
             const response = await prismaClient.design.findMany({ where: { Category: category.Category }, select: { id: true, imageUrl: true, title: true } })
             allDesigns.push({ category: category.Category, items: response })
         }
