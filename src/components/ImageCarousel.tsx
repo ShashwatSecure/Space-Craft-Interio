@@ -9,7 +9,7 @@ import Image from "next/image"
 
 const ImageCarousel = ({ images }: { images: string[] }) => {
     return (
-        <Carousel className="w-2/3">
+        <Carousel className="md:w-2/3 w-full relative">
             <CarouselContent>
                 {images.map((image, index) => (
                     <CarouselItem key={index}>
@@ -23,8 +23,8 @@ const ImageCarousel = ({ images }: { images: string[] }) => {
                     </CarouselItem>
                 ))}
             </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
+            <CarouselPrevious className="absolute left-2" />
+            <CarouselNext className="absolute right-2" />
         </Carousel>
     )
 }

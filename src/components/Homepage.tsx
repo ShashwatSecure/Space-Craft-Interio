@@ -35,6 +35,7 @@ const Homepage = () => {
                     },
                 ]}
                 cta="Get Started Now!"
+                url="/designs/1bhk"
             />
 
             {/* Home Interior Section */}

@@ -20,23 +20,26 @@ interface CarouselProps {
 }
 
 const CustomCarousel = ({ title, items }: CarouselProps) => {
-
     const { targetRef } = useIntersectionObserver()
 
     return (
-        <Carousel ref={targetRef}>
-            <h2 className="text-2xl font-semibold w-full text-center mb-3 uppercase text-gray-700">
+        <Carousel ref={targetRef} className="mx-0 my-0 relative">
+            <h2 className="text-2xl font-semibold w-full text-center mb-3 my-0 uppercase text-gray-700">
                 {title}
             </h2>
-            <CarouselContent>
+            <CarouselContent className="">
                 {items.map((item) => (
-                    <CarouselItem key={item.title} className="basis-1/3">
-                        <Card {...item} key={item.title} id={item.id.toString()} />
+                    <CarouselItem key={item.title} className="md:basis-1/3 w-full h-fit flex items-center justify-center">
+                        <Card
+                            {...item}
+                            key={item.title}
+                            id={item.id.toString()}
+                        />
                     </CarouselItem>
                 ))}
             </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
+            <CarouselPrevious className="absolute left-4" />
+            <CarouselNext className="absolute right-4" />
         </Carousel>
     )
 }

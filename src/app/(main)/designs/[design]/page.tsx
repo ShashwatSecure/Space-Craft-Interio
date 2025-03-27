@@ -43,7 +43,7 @@ export default async function Design({
         },
     }).then(async (res) => {
         const { success, message } = await res.json()
-        console.log(message)
+        console.log(success, message)
     })
 
     return (
@@ -53,7 +53,7 @@ export default async function Design({
                     {pageTitle}
                 </h2>
                 <p className="text-center text-gray-600 mt-2">{description}</p>
-                <div className="mt-6 grid grid-cols-2 justify-items-center content-center gap-6 px-32">
+                <div className="mt-6 grid md:grid-cols-2 grid-cols-1 justify-items-center content-center gap-6 md:px-32">
                     {designs?.map((dsgn, index) => (
                         <div
                             key={index}
@@ -64,7 +64,7 @@ export default async function Design({
                                 alt={dsgn.title}
                                 width={800}
                                 height={500}
-                                className="rounded-lg h-[50vh]"
+                                className="rounded-lg md:h-[50vh] h-auto"
                             />
                             <h3 className="text-sm w-full text-start font-semibold text-gray-800 mt-4">
                                 {dsgn.title.replaceAll("-", " ").toUpperCase()}

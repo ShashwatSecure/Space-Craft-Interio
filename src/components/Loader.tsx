@@ -1,6 +1,6 @@
 import { twMerge } from "tailwind-merge"
 
-function Loader({ className, fill = "fill-green-500" }: { className?: string, fill?: string }) {
+function Loader({ className, fill = "fill-orange-500" }: { className?: string, fill?: string }) {
     return (
         <div role="status" className={twMerge("w-[100vw] h-[100vh] flex items-center justify-center", className)}>
             <svg

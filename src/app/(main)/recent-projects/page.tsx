@@ -29,11 +29,11 @@ export default function RecentProjects() {
 
     return !loading ? (
         <>
-            <section className="mx-auto p-6 mt-12 md:mt-16 max-w-full animate-animate-appear">
+            <section className="mx-auto p-6 mt-14 md:mt-16 max-w-full animate-animate-appear">
                 <h2 className="text-4xl font-bold text-center text-gray-900 tracking-wide">
                     Recent Projects
                 </h2>
-                <p className="text-center text-gray-700 mt-3 text-lg">
+                <p className="text-center text-gray-700 mt-3 md:text-lg text-sm">
                     Explore our completed projects showcasing beautiful interior
                     designs.
                 </p>
@@ -44,7 +44,7 @@ export default function RecentProjects() {
                             key={index}
                             className="w-full px-2 py-2 bg-white rounded-xl flex flex-col items-center transition-all duration-500"
                         >
-                            <h3 className="text-3xl font-semibold text-gray-800 mb-2">
+                            <h3 className="md:text-3xl text-xl font-semibold text-gray-800 mb-2">
                                 {project.title}
                             </h3>
                             <p className="text-gray-700 text-center max-w-3xl text-lg leading-relaxed">
