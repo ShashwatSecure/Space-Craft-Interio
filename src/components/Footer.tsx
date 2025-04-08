@@ -1,19 +1,21 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import React from "react";
 import { FaFacebookF, FaTwitter, FaInstagram, FaYoutube, FaPinterest } from "react-icons/fa";
 import { PiThreadsLogoBold } from "react-icons/pi";
 
 const Footer = () => {
+  const router = useRouter()
   return (
     <footer className="bg-black text-gray-300 py-10">
       <div className="flex flex-col items-center text-center space-y-4 mt-2 mb-8">
         <h2 className="font-bold text-3xl text-white">
           Ready To Design Your Dream Home?
         </h2>
-        <button className="bg-orange-500 text-white px-6 py-3 rounded-lg text-lg font-semibold 
+        <button onClick={() => router.push("/designs/interior-design")} className="bg-orange-500 text-white px-6 py-3 rounded-lg text-lg font-semibold 
                      hover:bg-orange-600 transition duration-300 shadow-lg">
-          Book Free Consultation
+          Explore Our Designs
         </button>
       </div>
       <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 mt-4">
@@ -24,11 +26,11 @@ const Footer = () => {
           <ul className="space-y-2">
             {[
               { name: "Home", link: "/" },
-              { name: "Modular Kitchen Designs", link: "/modular-kitchen" },
-              { name: "Bedroom Designs", link: "/bedroom-designs" },
-              { name: "Living Room Designs", link: "/living-room" },
-              { name: "Dining Room Designs", link: "/dining-room" },
-              { name: "1 BHK Interior Designs", link: "/1bhk" },
+              { name: "Modular Kitchen Designs", link: "/designs/modular-kitchen" },
+              { name: "Bedroom Designs", link: "/designs/bedroom-designs" },
+              { name: "Living Room Designs", link: "/designs/living-room" },
+              { name: "Dining Room Designs", link: "/designs/dining-room" },
+              { name: "1 BHK Interior Designs", link: "/designs/1bhk" },
             ].map((item, index) => (
               <li key={index}>
                 <a href={item.link} className="hover:text-orange-400 transition">

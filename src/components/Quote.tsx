@@ -60,7 +60,7 @@ export default function Quote({ id, className }: { id: string; className?: strin
     return (
         <Dialog>
             <DialogTrigger asChild className={className}>
-                <CustomButton className="mt-4 hover:bg-orange-200 hover:border-transparent md:text-lg text-xs">
+                <CustomButton className="mt-4 hover:bg-orange-200 hover:border-transparent md:text-sm text-xs">
                     Get Quote
                 </CustomButton>
             </DialogTrigger>
