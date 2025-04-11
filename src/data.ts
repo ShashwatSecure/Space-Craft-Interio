@@ -559,5 +559,260 @@ export const data: {
                     "https://res.cloudinary.com/dj59omo7m/image/upload/v1741267562/hall-4_ozlryn.png",
             },
         ],
+    },
+]
+
+
+export const data2: {
+    title: string
+    items: Array<{ title: string; imageUrl: string }>
+}[] = [
+    {
+        title: "Balcony",
+        items: [
+            {
+                title: "A Balcony Design With A Cosy Work Station",
+                imageUrl:
+                    "https://res.cloudinary.com/dj59omo7m/image/upload/v1744399917/balcony-design-with-cosy-work-station_rg2b58.jpg",
+            },
+            {
+                title: "A Blue And White Balcony Design With Multifunctional Furniture",
+                imageUrl:
+                    "https://res.cloudinary.com/dj59omo7m/image/upload/v1744399917/blue-and-white-balcony-design-with-multifunctional-furniture_dibprh.jpg",
+            },
+            {
+                title: "A Stylish Balcony Design With A Book Cabinet And A Hanging Swing",
+                imageUrl:
+                    "https://res.cloudinary.com/dj59omo7m/image/upload/v1744399918/stylish-balcony-design-with-book-cabinet-and-hanging-swing_wxbgz2.jpg",
+            },
+            {
+                title: "A Balcony Design With A Smart Bar Unit",
+                imageUrl:
+                    "https://res.cloudinary.com/dj59omo7m/image/upload/v1744399917/balcony-design-with-smart-bar-unit_rywwpd.jpg",
+            },
+            {
+                title: "A Modern Balcony Design With A Study Nook And Hidden Storage",
+                imageUrl:
+                    "https://res.cloudinary.com/dj59omo7m/image/upload/v1744399917/modern-balcony-design-with-study-knook-and-hidden-storage_areubo.jpg",
+            },
+            {
+                title: "A Balcony Design With A Brick Wall And Open Shelves",
+                imageUrl:
+                    "https://res.cloudinary.com/dj59omo7m/image/upload/v1744399917/balcony-design-with-brick-wall-and-open-shelves_kdldt2.jpg",
+            },
+            {
+                title: "An Enclosed Balcony With A Home Office Setup",
+                imageUrl:
+                    "https://res.cloudinary.com/dj59omo7m/image/upload/v1744399917/enclosed-balcony-images-with-home-office-setup_uo7nbo.jpg",
+            },
+        ],
+    },
+    {
+        title: "Bathroom",
+        items: [
+            {
+                title: "A Bathroom Designed With Floral Mosaic Tiles",
+                imageUrl:
+                    "https://res.cloudinary.com/dj59omo7m/image/upload/v1744399596/bathroom-interior-design-with-floral-mosaic-tiles_p3xrxa.jpg",
+            },
+            {
+                title: "A Modern Bathroom Design With Clean Lines And Patterned Flooring",
+                imageUrl:
+                    "https://res.cloudinary.com/dj59omo7m/image/upload/v1744399594/bathroom-designs-in-modern-style-with-patterned-flooring_kjac0c.jpg",
+            },
+            {
+                title: "A Small Modern Organic Bathroom Design With Marble Tiles",
+                imageUrl:
+                    "https://res.cloudinary.com/dj59omo7m/image/upload/v1744399597/small-bathroom-design-images-in-modern-oragnic-style-with-marble-tiles_mcngm5.jpg",
+            },
+            {
+                title: "A Small Bathroom Design With Slate Tiles And A Space Saving Vanity Unit",
+                imageUrl:
+                    "https://res.cloudinary.com/dj59omo7m/image/upload/v1744399597/small-bathroom-design-with-slate-tiles-space-saving-vanity-unit_ltsm6f.jpg",
+            },
+            {
+                title: "A Fun Bathroom Design With Yellow Patterned Tiles And A Wooden Vanity",
+                imageUrl:
+                    "https://res.cloudinary.com/dj59omo7m/image/upload/v1744399597/bathroom-design-with-yellow-patterned-tiles_xxgqyd.jpg",
+            },
+            {
+                title: "A Modern Classical Bathroom With A Blue Eggshell Wall Finish And Ceramic Tiles",
+                imageUrl:
+                    "https://res.cloudinary.com/dj59omo7m/image/upload/v1744399597/modern-classical-bathroom-design-with-blue-wall-finish-ceramic-tiles_rbocvt.jpg",
+            },
+            {
+                title: "A Classic Take On A Modern Bathroom With Rich Green Walls And Gold Accents",
+                imageUrl:
+                    "https://res.cloudinary.com/dj59omo7m/image/upload/v1744399596/modern-bathroom-design-with-green-walls-gold-accents_b2xcrd.jpg",
+            },
+            {
+                title: "A Clean And Simple Bathroom Design With A Striking Blue Vanity",
+                imageUrl:
+                    "https://res.cloudinary.com/dj59omo7m/image/upload/v1744399594/bathroom-design-with-striking-blue-vanity_nlqfyv.jpg",
+            },
+        ],
+    },
+
+    {
+        title: "Home Office",
+        items: [
+            {
+                title: "An L-shaped Home Office With An Attached Bookshelf",
+                imageUrl:
+                    "https://res.cloudinary.com/dj59omo7m/image/upload/v1744399247/l-shaped-home-office-images-with-attahced-bookshelf_lyqdbm.jpg",
+            },
+            {
+                title: "A Yellow and White Themed Home Office Design",
+                imageUrl:
+                    "https://res.cloudinary.com/dj59omo7m/image/upload/v1744399248/yellow-and-white-themed-home-office-design_fwgcis.jpg",
+            },
+            {
+                title: "A Fully Functional Home Office Corner With Floating Shelves",
+                imageUrl:
+                    "https://res.cloudinary.com/dj59omo7m/image/upload/v1744399246/home-office-desk-with-floating-shelves-to-store-books-and-documents_ksobpx.jpg",
+            },
+            {
+                title: "A Minimalist Home Office Tucked Into A Corner Of Your Bedroom",
+                imageUrl:
+                    "https://res.cloudinary.com/dj59omo7m/image/upload/v1744399247/minimalist-home-office-in-bedroom_icz8hy.jpg",
+            },
+            {
+                title: "An Uncomplicated Home Office Design With A Floral Patterned Wallpaper",
+                imageUrl:
+                    "https://res.cloudinary.com/dj59omo7m/image/upload/v1744399246/home-office-design-with-floral-patterned-wallpaper_jmp5mb.jpg",
+            },
+            {
+                title: "A Gorgeous Home Office Setup With A Folding Bookshelf",
+                imageUrl:
+                    "https://res.cloudinary.com/dj59omo7m/image/upload/v1744399246/home-office-desk-extends-to-a-wooden-folding-bookshelf-with-handleless-drawer_rlys4l.jpg",
+            },
+            {
+                title: "A Scandinavian Style Home Office, Perfect For Peaceful Work Environment",
+                imageUrl:
+                    "https://res.cloudinary.com/dj59omo7m/image/upload/v1744399247/scandinavian-style-home-office_emnqlr.jpg",
+            },
+            {
+                title: "A Home Office Corner With Wall Mounted Desk And Cabinets",
+                imageUrl:
+                    "https://res.cloudinary.com/dj59omo7m/image/upload/v1744399247/home-office-setup-in-the-bedroom-with-wall-mounted-desk-and-cabinet_xmmihw.jpg",
+            },
+            {
+                title: "A 2 In 1 TV Cum Home Office Unit For Living Room",
+                imageUrl:
+                    "https://res.cloudinary.com/dj59omo7m/image/upload/v1744399248/tv-cum-home-office-unit-for-living-room_g4qvuj.jpg",
+            },
+        ],
+    },
+
+    {
+        title: "Pooja Room",
+        items: [
+            {
+                title: "An Open Mandir Design With Traditional Elements",
+                imageUrl:
+                    "https://res.cloudinary.com/dj59omo7m/image/upload/v1744398644/open-mandir-room-design-with-ganesha-jaali-backdrop_xwruu5.jpg",
+            },
+            {
+                title: "A Wooden Mandir Design For Traditional Homes",
+                imageUrl:
+                    "https://res.cloudinary.com/dj59omo7m/image/upload/v1744398646/wooden-pooja-mandir-design-with-traditional-touch_gyftyn.jpg",
+            },
+            {
+                title: "A Contemporary Pooja Room For Indian Homes",
+                imageUrl:
+                    "https://res.cloudinary.com/dj59omo7m/image/upload/v1744398643/contemporary-pooja-room-design-for-indian-homes_hk4zop.jpg",
+            },
+            {
+                title: "A Spacious Mandir For Large Homes",
+                imageUrl:
+                    "https://res.cloudinary.com/dj59omo7m/image/upload/v1744398644/grey-and-white-pooja-unit-with-jaali-backdrop_x7fmwv.jpg",
+            },
+            {
+                title: "An L-Shaped Pooja Unit For The Living Room",
+                imageUrl:
+                    "https://res.cloudinary.com/dj59omo7m/image/upload/v1744398644/l-shaped-puja-unit-design-blush-pink_ak4owm.jpg",
+            },
+            {
+                title: "A Pooja Unit In In Neutral Tones",
+                imageUrl:
+                    "https://res.cloudinary.com/dj59omo7m/image/upload/v1744398644/grey-and-white-tv-unit-with-pooja-room_o2xruk.jpg",
+            },
+            {
+                title: "A White Finish Pooja Unit With Storage",
+                imageUrl:
+                    "https://res.cloudinary.com/dj59omo7m/image/upload/v1744398645/white-pooja-unit-design-with-storage_gz6yup.jpg",
+            },
+            {
+                title: "A Sleek White & Wooden Finished Pooja Unit",
+                imageUrl:
+                    "https://res.cloudinary.com/dj59omo7m/image/upload/v1744398645/white-and-wooden-finish-pooja-unit-design_vnxn0d.jpg",
+            },
+            {
+                title: "A Compact Pooja Unit In Grey & White Finish",
+                imageUrl:
+                    "https://res.cloudinary.com/dj59omo7m/image/upload/v1744398644/grey-and-white-tv-unit-with-pooja-room_o2xruk.jpg",
+            },
+            {
+                title: "A Compact Pooja Unit For The Foyer",
+                imageUrl:
+                    "https://res.cloudinary.com/dj59omo7m/image/upload/v1744398644/floating-pooja-unit-with-intricate-jaali-door_b0cxnp.jpg",
+            },
+        ],
+    },
+
+    {
+        title: "Wardrobe",
+        items: [
+            {
+                title: "A Wardrobe With Attached Study-Cum-Dressing Unit",
+                imageUrl:
+                    "https://res.cloudinary.com/dj59omo7m/image/upload/v1744397994/wardrobe-with-attached-study-cum-dressing-unit_xkrzmn.jpg",
+            },
+            {
+                title: "A Wardrobe Design With Multiple Compartments And Dual Tones",
+                imageUrl:
+                    "https://res.cloudinary.com/dj59omo7m/image/upload/v1744397992/dual-tone-wardrobe-design-with-several-compartments_voq9qu.jpg",
+            },
+            {
+                title: "Sliding Door Wardrobe With An Attached Dresser Unit",
+                imageUrl:
+                    "https://res.cloudinary.com/dj59omo7m/image/upload/v1744397992/floor-to-ceiling-wooden-wardrobe-images_thxriw.jpg",
+            },
+            {
+                title: "A Floor To Ceiling Wardrobe With Glass Shutters",
+                imageUrl:
+                    "https://res.cloudinary.com/dj59omo7m/image/upload/v1744397992/floor-to-ceiling-wardrobe-design-with-glass-shutters_oktqfj.jpg",
+            },
+            {
+                title: "A Kids Wardrobe Design For A Bedroom",
+                imageUrl:
+                    "https://res.cloudinary.com/dj59omo7m/image/upload/v1744397993/kids-wardrobe-design-for-bedroom_devxd0.jpg",
+            },
+            {
+                title: "A Modern White Wardrobe Design With A Pull-Out Dresser",
+                imageUrl:
+                    "https://res.cloudinary.com/dj59omo7m/image/upload/v1744397994/modern-white-wardrobe-design-with-pull-out-dresser_rp3fgj.jpg",
+            },
+            {
+                title: "A Simple Wardrobe Design In Dark Wood And White Laminate",
+                imageUrl:
+                    "https://res.cloudinary.com/dj59omo7m/image/upload/v1744397993/four-door-dark-wood-wardrobe-design-with-mirror_mkarok.jpg",
+            },
+            {
+                title: "A Suave Wardrobe With An Attached Open Shelf For Bags And Shoes",
+                imageUrl:
+                    "https://res.cloudinary.com/dj59omo7m/image/upload/v1744397993/wardrobe-design-finished-in-slate-with-minimalistic-look_kliu17.jpg",
+            },
+            {
+                title: "A Smart Floor To Ceiling Wooden Wardrobe Design",
+                imageUrl:
+                    "https://res.cloudinary.com/dj59omo7m/image/upload/v1744397992/floor-to-ceiling-wardrobe-design-with-glass-shutters_oktqfj.jpg",
+            },
+            {
+                title: "A Wardrobe Designed With An In-built TV Unit",
+                imageUrl:
+                    "https://res.cloudinary.com/dj59omo7m/image/upload/v1744397995/wardrobe-design-with-in-built-tv-unit_ztd0em.jpg",
+            },
+        ],
     }
 ]
