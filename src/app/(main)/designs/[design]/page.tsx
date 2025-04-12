@@ -35,6 +35,7 @@ export default async function Design({
     fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/session`, {
         method: "PUT",
         body: JSON.stringify({ designCategory: design }),
+        credentials: "include",
         headers: {
             Cookie: cookieStore
                 .getAll()

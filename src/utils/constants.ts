@@ -83,3 +83,15 @@ export const menuItems = [
         ],
     },
 ]
+
+export const Designs = [
+    "Modular Kitchen",
+    "Living Room",
+    "Bedroom",
+    "Kids Bedroom",
+    "Dining Room",
+    "Home Office",
+    "1BHK",
+    "2BHK",
+    "3BHK",
+]
