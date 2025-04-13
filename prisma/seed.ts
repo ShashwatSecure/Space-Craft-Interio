@@ -1,5 +1,5 @@
 import { projectData } from "../src/projectData"
-import { data } from "../src/data"
+import { data, data2 } from "../src/data"
 import { PrismaClient } from "@prisma/client"
 import { reviewData } from "../src/reviewData"
 import { freeConsultations } from "../src/consultationData"
@@ -48,25 +48,25 @@ async function main() {
         //         })
         //     })
         // if (designCount == 0) {
-        //     data.map((d) => {
-        //         const category = d.title
-        //         d.items.map(async (item) => {
-        //             await prisma.design.create({
-        //                 data: {
-        //                     Category: category,
-        //                     title: item.title,
-        //                     imageUrl: item.imageUrl,
-        //                 },
-        //             })
-        //         })
-        //     })
+            data2.map((d) => {
+                const category = d.title
+                d.items.map(async (item) => {
+                    await prisma.design.create({
+                        data: {
+                            Category: category,
+                            title: item.title,
+                            imageUrl: item.imageUrl,
+                        },
+                    })
+                })
+            })
         // }
         // await prisma.session.createMany({
         //     data: randomSessions
         // })
-        await prisma.designCategory.createMany({
-            data: randomSessionsDesignCategory
-        })
+        // await prisma.designCategory.createMany({
+        //     data: randomSessionsDesignCategory
+        // })
     // })
     // .then(() => {
     //     if (consultationCount == 0)

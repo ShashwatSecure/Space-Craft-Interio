@@ -1,5 +1,5 @@
 import { faker } from "@faker-js/faker"
-import { Prisma, Property } from "@prisma/client"
+import { Prisma } from "@prisma/client"
 import { City, Designs } from "./utils/constants";
 
 function generateRandomNumber(min: number, max: number) {
