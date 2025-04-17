@@ -47,12 +47,11 @@ const Footer = () => {
           <h3 className="text-white font-semibold mb-3">Designs & Guides</h3>
           <ul className="space-y-2">
             {[
-              { name: "Design Gallery", link: "/interior-design" },
-              { name: "Wardrobe Designs", link: "/wardrobe" },
-              { name: "Kids Bedroom Designs", link: "/kids-bedroom" },
-              { name: "Bathroom Designs", link: "/bathroom" },
-              { name: "Guides", link: "/guides" },
-              { name: "2 BHK Interior Designs", link: "/2bhk" },
+              { name: "Design Gallery", link: "/designs/interior-design" },
+              { name: "Wardrobe Designs", link: "/designs/wardrobe" },
+              { name: "Kids Bedroom Designs", link: "/designs/kids-bedroom" },
+              { name: "Bathroom Designs", link: "/designs/bathroom" },
+              { name: "2 BHK Interior Designs", link: "/designs/2bhk" },
             ].map((item, index) => (
               <li key={index}>
                 <a href={item.link} className="hover:text-orange-400 transition">
@@ -69,11 +68,8 @@ const Footer = () => {
           <h3 className="text-white font-semibold mb-3">More Services</h3>
           <ul className="space-y-2">
             {[
-              { name: "Space Saving Designs", link: "/space-saving-designs" },
-              { name: "Why SpaceCraftInterio", link: "/why-spacecraftinterio" },
-              { name: "FAQs", link: "/faqs" },
-              { name: "Contact Us", link: "/contact" },
-              { name: "3 BHK Interior Designs", link: "/3bhk" },
+              { name: "Space Saving Designs", link: "/designs/interior-design" },
+              { name: "3 BHK Interior Designs", link: "/designs/3bhk" },
             ].map((item, index) => (
               <li key={index}>
                 <a href={item.link} className="hover:text-orange-400 transition">
