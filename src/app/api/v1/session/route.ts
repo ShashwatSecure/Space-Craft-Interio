@@ -57,13 +57,6 @@ export const GET = async () => {
                 { status: 404 }
             )
 
-        await prismaClient.session.update({
-            where: { token },
-            data: {
-                visits: { increment: 1 },
-            },
-        })
-
         return NextResponse.json(
             { success: true, message: "Visits incremented" },
             { status: 200 }
@@ -119,23 +112,23 @@ export const PUT = async (req: NextRequest) => {
                 { status: 404 }
             )
 
-        await prismaClient.designCategory.upsert({
-            where: {
-                sessionId_design: {
+        const isSessionDesignCategoryThere =
+            await prismaClient.designCategory.findFirst({
+                where: {
+                    AND: [
+                        { sessionId: session.id },
+                        { design: body.designCategory },
+                    ],
+                },
+            })
+
+        if (!isSessionDesignCategoryThere)
+            await prismaClient.designCategory.create({
+                data: {
                     design: body.designCategory,
-                    sessionId: session.id,
-                },
-            },
-            create: {
-                sessionId: session.id,
-                design: body.designCategory,
-            },
-            update: {
-                visits: {
-                    increment: 1,
-                },
-            },
-        })
+                    sessionId: session.id
+                }
+            })
 
         return NextResponse.json(
             { success: true, message: "Updated the session!" },

@@ -63,24 +63,21 @@ model GuideContent {
 }
 
 model Session {
-  id    Int    @id @unique @default(autoincrement())
-  token String @unique @default(uuid())
-
+  id        Int    @id @unique @default(autoincrement())
+  token     String @unique @default(uuid())
   city      String
   latitude  String
   longitude String
 
-  visits         Int              @default(1)
+  createdAt      DateTime         @default(now())
   designCategory DesignCategory[]
 }
 
 model DesignCategory {
+  id        Int     @id @unique @default(autoincrement())
   sessionId Int
-  visits    Int @default(1)
-  design String
-  Session Session @relation(fields: [sessionId], references: [id], onDelete: Cascade)
-
-  @@id([sessionId, design])
+  design    String
+  Session   Session @relation(fields: [sessionId], references: [id], onDelete: Cascade)
 }
 
 enum City {
@@ -104,3 +101,10 @@ enum Property {
   THREE_BHK
   FOUR_BHK_OR_DUPLEX
 }
+
+model AdminSession {
+  id        Int      @id @unique @default(autoincrement())
+  token     String   @default(cuid())
+  createdAt DateTime @default(now())
+}
+
